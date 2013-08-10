@@ -13,6 +13,8 @@
 		1C94C5B717B5F71200EB865E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C5B017B5F71200EB865E /* main.m */; };
 		1C94C5B817B5F71200EB865E /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C5B317B5F71200EB865E /* SAAppDelegate.m */; };
 		1C94C5B917B5F71200EB865E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C94C5B517B5F71200EB865E /* Images.xcassets */; };
+		1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEEFF17B6B8330076EC8D /* fishhook.c */; };
+		1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		1C94C5B317B5F71200EB865E /* SAAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAppDelegate.m; sourceTree = "<group>"; };
 		1C94C5B517B5F71200EB865E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1C94C5B617B5F71200EB865E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CFDEEFF17B6B8330076EC8D /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		1CFDEF0017B6B8330076EC8D /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QuietAssertMacros.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +53,7 @@
 			children = (
 				1C94C5AF17B5F71200EB865E /* Code */,
 				1C94C5B417B5F71200EB865E /* Resources */,
+				1CFDEEFD17B6B8330076EC8D /* Vendor */,
 				1C94C57F17B5F63D00EB865E /* Frameworks */,
 				1C94C57E17B5F63D00EB865E /* Products */,
 			);
@@ -77,6 +83,7 @@
 			children = (
 				1C94C5B017B5F71200EB865E /* main.m */,
 				1C94C5B117B5F71200EB865E /* Prefix.pch */,
+				1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */,
 				1C94C5B217B5F71200EB865E /* SAAppDelegate.h */,
 				1C94C5B317B5F71200EB865E /* SAAppDelegate.m */,
 			);
@@ -90,6 +97,23 @@
 				1C94C5B617B5F71200EB865E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1CFDEEFD17B6B8330076EC8D /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				1CFDEEFE17B6B8330076EC8D /* fishhook */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		1CFDEEFE17B6B8330076EC8D /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				1CFDEEFF17B6B8330076EC8D /* fishhook.c */,
+				1CFDEF0017B6B8330076EC8D /* fishhook.h */,
+			);
+			path = fishhook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C94C5B817B5F71200EB865E /* SAAppDelegate.m in Sources */,
+				1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */,
 				1C94C5B717B5F71200EB865E /* main.m in Sources */,
+				1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
