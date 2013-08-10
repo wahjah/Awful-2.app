@@ -10,25 +10,28 @@
 		1C94C58117B5F63D00EB865E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C94C58017B5F63D00EB865E /* Foundation.framework */; };
 		1C94C58317B5F63D00EB865E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C94C58217B5F63D00EB865E /* CoreGraphics.framework */; };
 		1C94C58517B5F63D00EB865E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C94C58417B5F63D00EB865E /* UIKit.framework */; };
-		1C94C5B717B5F71200EB865E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C5B017B5F71200EB865E /* main.m */; };
-		1C94C5B817B5F71200EB865E /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C5B317B5F71200EB865E /* SAAppDelegate.m */; };
-		1C94C5B917B5F71200EB865E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C94C5B517B5F71200EB865E /* Images.xcassets */; };
+		1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A317B6B4A300D8CA66 /* main.m */; };
+		1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */; };
+		1CFBD7AC17B6B4BA00D8CA66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFBD7AA17B6B4BA00D8CA66 /* Images.xcassets */; };
 		1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEEFF17B6B8330076EC8D /* fishhook.c */; };
 		1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */; };
+		C45EF707A7E44B85AD369554 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 038D549B8B544B7AACD99D8D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		038D549B8B544B7AACD99D8D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		12373D64E4DD4ACAA091C670 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1C94C57D17B5F63D00EB865E /* Awful 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awful 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C94C58017B5F63D00EB865E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1C94C58217B5F63D00EB865E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1C94C58417B5F63D00EB865E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1C94C59917B5F63D00EB865E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1C94C5B017B5F71200EB865E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1C94C5B117B5F71200EB865E /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		1C94C5B217B5F71200EB865E /* SAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAppDelegate.h; sourceTree = "<group>"; };
-		1C94C5B317B5F71200EB865E /* SAAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAppDelegate.m; sourceTree = "<group>"; };
-		1C94C5B517B5F71200EB865E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1C94C5B617B5F71200EB865E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CFBD7A317B6B4A300D8CA66 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CFBD7A417B6B4A300D8CA66 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAppDelegate.h; sourceTree = "<group>"; };
+		1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAppDelegate.m; sourceTree = "<group>"; };
+		1CFBD7AA17B6B4BA00D8CA66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1CFBD7AB17B6B4BA00D8CA66 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CFDEEFF17B6B8330076EC8D /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		1CFDEF0017B6B8330076EC8D /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QuietAssertMacros.c; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 				1C94C58317B5F63D00EB865E /* CoreGraphics.framework in Frameworks */,
 				1C94C58517B5F63D00EB865E /* UIKit.framework in Frameworks */,
 				1C94C58117B5F63D00EB865E /* Foundation.framework in Frameworks */,
+				C45EF707A7E44B85AD369554 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,11 +55,12 @@
 		1C94C57417B5F63D00EB865E = {
 			isa = PBXGroup;
 			children = (
-				1C94C5AF17B5F71200EB865E /* Code */,
-				1C94C5B417B5F71200EB865E /* Resources */,
+				1CFBD7A217B6B4A300D8CA66 /* Code */,
+				1CFBD7A917B6B4BA00D8CA66 /* Resources */,
 				1CFDEEFD17B6B8330076EC8D /* Vendor */,
 				1C94C57F17B5F63D00EB865E /* Frameworks */,
 				1C94C57E17B5F63D00EB865E /* Products */,
+				12373D64E4DD4ACAA091C670 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,29 +79,32 @@
 				1C94C58217B5F63D00EB865E /* CoreGraphics.framework */,
 				1C94C58417B5F63D00EB865E /* UIKit.framework */,
 				1C94C59917B5F63D00EB865E /* XCTest.framework */,
+				038D549B8B544B7AACD99D8D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1C94C5AF17B5F71200EB865E /* Code */ = {
+		1CFBD7A217B6B4A300D8CA66 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				1C94C5B017B5F71200EB865E /* main.m */,
-				1C94C5B117B5F71200EB865E /* Prefix.pch */,
+				1CFBD7A317B6B4A300D8CA66 /* main.m */,
+				1CFBD7A417B6B4A300D8CA66 /* Prefix.pch */,
 				1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */,
-				1C94C5B217B5F71200EB865E /* SAAppDelegate.h */,
-				1C94C5B317B5F71200EB865E /* SAAppDelegate.m */,
+				1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */,
+				1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */,
 			);
-			path = Code;
+			name = Code;
+			path = ../Code;
 			sourceTree = "<group>";
 		};
-		1C94C5B417B5F71200EB865E /* Resources */ = {
+		1CFBD7A917B6B4BA00D8CA66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1C94C5B517B5F71200EB865E /* Images.xcassets */,
-				1C94C5B617B5F71200EB865E /* Info.plist */,
+				1CFBD7AA17B6B4BA00D8CA66 /* Images.xcassets */,
+				1CFBD7AB17B6B4BA00D8CA66 /* Info.plist */,
 			);
-			path = Resources;
+			name = Resources;
+			path = ../Resources;
 			sourceTree = "<group>";
 		};
 		1CFDEEFD17B6B8330076EC8D /* Vendor */ = {
@@ -104,8 +112,9 @@
 			children = (
 				1CFDEEFE17B6B8330076EC8D /* fishhook */,
 			);
-			path = Vendor;
-			sourceTree = "<group>";
+			name = Vendor;
+			path = ../Vendor;
+			sourceTree = SOURCE_ROOT;
 		};
 		1CFDEEFE17B6B8330076EC8D /* fishhook */ = {
 			isa = PBXGroup;
@@ -123,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C94C5A917B5F63D00EB865E /* Build configuration list for PBXNativeTarget "Awful 2" */;
 			buildPhases = (
+				A7CDC305F9C94C05B748BCD6 /* Check Pods Manifest.lock */,
 				1C94C57917B5F63D00EB865E /* Sources */,
 				1C94C57A17B5F63D00EB865E /* Frameworks */,
 				1C94C57B17B5F63D00EB865E /* Resources */,
+				D34FCE139AA640D1891D2711 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,20 +184,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C94C5B917B5F71200EB865E /* Images.xcassets in Resources */,
+				1CFBD7AC17B6B4BA00D8CA66 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7CDC305F9C94C05B748BCD6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D34FCE139AA640D1891D2711 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C94C57917B5F63D00EB865E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C94C5B817B5F71200EB865E /* SAAppDelegate.m in Sources */,
+				1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */,
 				1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */,
-				1C94C5B717B5F71200EB865E /* main.m in Sources */,
+				1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */,
 				1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,13 +320,14 @@
 		};
 		1C94C5AA17B5F63D00EB865E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12373D64E4DD4ACAA091C670 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Code/Prefix.pch;
-				INFOPLIST_FILE = Resources/Info.plist;
+				GCC_PREFIX_HEADER = ../Code/Prefix.pch;
+				INFOPLIST_FILE = ../Resources/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -290,13 +335,14 @@
 		};
 		1C94C5AB17B5F63D00EB865E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12373D64E4DD4ACAA091C670 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Code/Prefix.pch;
-				INFOPLIST_FILE = Resources/Info.plist;
+				GCC_PREFIX_HEADER = ../Code/Prefix.pch;
+				INFOPLIST_FILE = ../Resources/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
