@@ -15,6 +15,7 @@
 		1CFBD7AC17B6B4BA00D8CA66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFBD7AA17B6B4BA00D8CA66 /* Images.xcassets */; };
 		1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEEFF17B6B8330076EC8D /* fishhook.c */; };
 		1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */; };
+		1CFDEF0B17B6CD390076EC8D /* SAForumsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFDEF0A17B6CD390076EC8D /* SAForumsClient.m */; };
 		C45EF707A7E44B85AD369554 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 038D549B8B544B7AACD99D8D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		1CFDEEFF17B6B8330076EC8D /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		1CFDEF0017B6B8330076EC8D /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QuietAssertMacros.c; sourceTree = "<group>"; };
+		1CFDEF0917B6CD390076EC8D /* SAForumsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAForumsClient.h; sourceTree = "<group>"; };
+		1CFDEF0A17B6CD390076EC8D /* SAForumsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAForumsClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */,
 				1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */,
 				1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */,
+				1CFDEF0917B6CD390076EC8D /* SAForumsClient.h */,
+				1CFDEF0A17B6CD390076EC8D /* SAForumsClient.m */,
 			);
 			name = Code;
 			path = ../Code;
@@ -231,6 +236,7 @@
 				1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */,
 				1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */,
 				1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */,
+				1CFDEF0B17B6CD390076EC8D /* SAForumsClient.m in Sources */,
 				1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
