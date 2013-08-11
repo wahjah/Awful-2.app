@@ -15,6 +15,11 @@
 @interface SAForumsClient : NSObject
 
 /**
+ * Returns the app-wide instance of SAForumsClient.
+ */
++ (instancetype)client;
+
+/**
  * The ID of the logged-in user, or nil if no user is logged in.
  */
 @property (readonly, copy, nonatomic) NSString *loggedInUserID;

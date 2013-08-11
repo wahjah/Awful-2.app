@@ -20,6 +20,16 @@
 
 @implementation SAForumsClient
 
++ (instancetype)client
+{
+    static SAForumsClient *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [self new];
+    });
+    return instance;
+}
+
 - (NSString *)loggedInUserID
 {
     NSHTTPCookieStorage *storage = self.HTTPClient.session.configuration.HTTPCookieStorage;

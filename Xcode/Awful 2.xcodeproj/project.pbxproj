@@ -10,6 +10,7 @@
 		1C94C58117B5F63D00EB865E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C94C58017B5F63D00EB865E /* Foundation.framework */; };
 		1C94C58317B5F63D00EB865E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C94C58217B5F63D00EB865E /* CoreGraphics.framework */; };
 		1C94C58517B5F63D00EB865E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C94C58417B5F63D00EB865E /* UIKit.framework */; };
+		1CB31FC117B751BF00988F5A /* SALoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB31FC017B751BF00988F5A /* SALoginFormViewController.m */; };
 		1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A317B6B4A300D8CA66 /* main.m */; };
 		1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */; };
 		1CFBD7AC17B6B4BA00D8CA66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFBD7AA17B6B4BA00D8CA66 /* Images.xcassets */; };
@@ -27,6 +28,8 @@
 		1C94C58217B5F63D00EB865E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1C94C58417B5F63D00EB865E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1C94C59917B5F63D00EB865E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1CB31FBF17B751BF00988F5A /* SALoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALoginFormViewController.h; sourceTree = "<group>"; };
+		1CB31FC017B751BF00988F5A /* SALoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALoginFormViewController.m; sourceTree = "<group>"; };
 		1CFBD7A317B6B4A300D8CA66 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CFBD7A417B6B4A300D8CA66 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */,
 				1CFDEF0917B6CD390076EC8D /* SAForumsClient.h */,
 				1CFDEF0A17B6CD390076EC8D /* SAForumsClient.m */,
+				1CB31FBF17B751BF00988F5A /* SALoginFormViewController.h */,
+				1CB31FC017B751BF00988F5A /* SALoginFormViewController.m */,
 			);
 			name = Code;
 			path = ../Code;
@@ -235,6 +240,7 @@
 			files = (
 				1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */,
 				1CFDEF0217B6B8330076EC8D /* fishhook.c in Sources */,
+				1CB31FC117B751BF00988F5A /* SALoginFormViewController.m in Sources */,
 				1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */,
 				1CFDEF0B17B6CD390076EC8D /* SAForumsClient.m in Sources */,
 				1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */,
