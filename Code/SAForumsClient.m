@@ -7,6 +7,7 @@
 
 #import "SAForumsClient.h"
 #import <AFNetworking/AFNetworking.h>
+#import "SAHTMLSerializer.h"
 
 @interface SAHTTPClient : AFHTTPClient
 
@@ -89,7 +90,8 @@
 {
     self = [super initWithBaseURL:url];
     if (self) {
-        AFHTTPSerializer *serializer = [AFHTTPSerializer serializer];
+        AFCompoundSerializer *serializer = [AFCompoundSerializer compoundSerializerWithResponseSerializers:
+                                            @[ [SAHTMLSerializer serializer] ]];
         serializer.stringEncoding = NSWindowsCP1252StringEncoding;
         self.requestSerializer = serializer;
         self.responseSerializer = serializer;
