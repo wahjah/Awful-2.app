@@ -9,7 +9,7 @@
 #import "SABasementItem.h"
 #import "SASidebarViewController.h"
 
-@interface SABasementViewController ()
+@interface SABasementViewController () <SASidebarViewControllerDelegate>
 
 @property (nonatomic) SASidebarViewController *sidebarViewController;
 @property (nonatomic) UIView *mainContainerView;
@@ -28,6 +28,7 @@
         _selectedViewController = _viewControllers[0];
         NSArray *items = [_viewControllers valueForKey:@"basementItem"];
         _sidebarViewController = [[SASidebarViewController alloc] initWithBasementItems:items];
+        _sidebarViewController.delegate = self;
     }
     return self;
 }
@@ -160,6 +161,15 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];
+}
+
+#pragma mark SASidebarViewControllerDelegate
+
+- (void)sidebar:(SASidebarViewController *)sidebar didSelectItem:(SABasementItem *)item
+{
+    NSUInteger i = [sidebar.basementItems indexOfObject:item];
+    self.selectedViewController = self.viewControllers[i];
+    [self setBasementVisible:NO animated:YES];
 }
 
 @end

@@ -33,6 +33,7 @@
     for (NSString *title in @[ @"Forums", @"Bookmarks", @"Read Later", @"Messages", @"Search", @"Settings"]) {
         UIViewController *viewController = [UIViewController new];
         viewController.title = title;
+        viewController.view.backgroundColor = [UIColor whiteColor];
         [viewControllers addObject:viewController];
     }
     for (NSUInteger i = 0; i < viewControllers.count; i++) {
