@@ -26,10 +26,7 @@
     if (self) {
         _viewControllers = [viewControllers copy];
         _selectedViewController = _viewControllers[0];
-        NSMutableArray *items = [NSMutableArray new];
-        for (UIViewController *viewController in _viewControllers) {
-            [items addObject:[[SABasementItem alloc] initWithTitle:viewController.title]];
-        }
+        NSArray *items = [_viewControllers valueForKey:@"basementItem"];
         _sidebarViewController = [[SASidebarViewController alloc] initWithBasementItems:items];
     }
     return self;

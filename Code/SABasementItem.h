@@ -26,3 +26,12 @@
 @property (copy, nonatomic) NSString *title;
 
 @end
+
+@interface UIViewController (SABasementItem)
+
+/**
+ * Defaults to a basement item that takes its title from this view controller.
+ */
+@property (strong, nonatomic) SABasementItem *basementItem;
+
+@end
