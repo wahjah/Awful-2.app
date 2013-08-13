@@ -13,6 +13,8 @@
 		1CB31FC117B751BF00988F5A /* SALoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB31FC017B751BF00988F5A /* SALoginFormViewController.m */; };
 		1CB61D1417B8ABCF00EE9653 /* SAHTMLSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D1317B8ABCF00EE9653 /* SAHTMLSerializer.m */; };
 		1CB61D1717B9B52100EE9653 /* SABasementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D1617B9B52100EE9653 /* SABasementViewController.m */; };
+		1CB61D1A17B9F5A700EE9653 /* SASidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D1917B9F5A700EE9653 /* SASidebarViewController.m */; };
+		1CB61D1D17B9F7C300EE9653 /* SABasementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D1C17B9F7C300EE9653 /* SABasementItem.m */; };
 		1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A317B6B4A300D8CA66 /* main.m */; };
 		1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */; };
 		1CFBD7AC17B6B4BA00D8CA66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFBD7AA17B6B4BA00D8CA66 /* Images.xcassets */; };
@@ -36,6 +38,10 @@
 		1CB61D1317B8ABCF00EE9653 /* SAHTMLSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAHTMLSerializer.m; sourceTree = "<group>"; };
 		1CB61D1517B9B52100EE9653 /* SABasementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABasementViewController.h; sourceTree = "<group>"; };
 		1CB61D1617B9B52100EE9653 /* SABasementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABasementViewController.m; sourceTree = "<group>"; };
+		1CB61D1817B9F5A700EE9653 /* SASidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASidebarViewController.h; sourceTree = "<group>"; };
+		1CB61D1917B9F5A700EE9653 /* SASidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASidebarViewController.m; sourceTree = "<group>"; };
+		1CB61D1B17B9F7C300EE9653 /* SABasementItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABasementItem.h; sourceTree = "<group>"; };
+		1CB61D1C17B9F7C300EE9653 /* SABasementItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABasementItem.m; sourceTree = "<group>"; };
 		1CFBD7A317B6B4A300D8CA66 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CFBD7A417B6B4A300D8CA66 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 				1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */,
 				1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */,
 				1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */,
+				1CB61D1B17B9F7C300EE9653 /* SABasementItem.h */,
+				1CB61D1C17B9F7C300EE9653 /* SABasementItem.m */,
 				1CB61D1517B9B52100EE9653 /* SABasementViewController.h */,
 				1CB61D1617B9B52100EE9653 /* SABasementViewController.m */,
 				1CFDEF0917B6CD390076EC8D /* SAForumsClient.h */,
@@ -112,6 +120,8 @@
 				1CB61D1317B8ABCF00EE9653 /* SAHTMLSerializer.m */,
 				1CB31FBF17B751BF00988F5A /* SALoginFormViewController.h */,
 				1CB31FC017B751BF00988F5A /* SALoginFormViewController.m */,
+				1CB61D1817B9F5A700EE9653 /* SASidebarViewController.h */,
+				1CB61D1917B9F5A700EE9653 /* SASidebarViewController.m */,
 			);
 			name = Code;
 			path = ../Code;
@@ -255,6 +265,8 @@
 				1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */,
 				1CFDEF0B17B6CD390076EC8D /* SAForumsClient.m in Sources */,
 				1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */,
+				1CB61D1D17B9F7C300EE9653 /* SABasementItem.m in Sources */,
+				1CB61D1A17B9F5A700EE9653 /* SASidebarViewController.m in Sources */,
 				1CB61D1717B9B52100EE9653 /* SABasementViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

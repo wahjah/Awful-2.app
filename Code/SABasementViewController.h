@@ -17,21 +17,19 @@
  *
  * This method is the designated initializer.
  *
- * @param basementViewController The basement view controller.
- * @param mainViewController The main view controller.
+ * @param viewControllers An array of UIViewController instances.
  */
-- (id)initWithBasementViewController:(UIViewController *)basementViewController
-                  mainViewController:(UIViewController *)mainViewController;
+- (id)initWithViewControllers:(NSArray *)viewControllers;
 
 /**
- * The basement view controller.
+ * An array of UIViewController instances.
  */
-@property (readonly, strong, nonatomic) UIViewController *basementViewController;
+@property (readonly, copy, nonatomic) NSArray *viewControllers;
 
 /**
- * The main view controller.
+ * The currently-visible view controller. Only items in `viewControllers` are eligible for selection.
  */
-@property (readonly, strong, nonatomic) UIViewController *mainViewController;
+@property (strong, nonatomic) UIViewController *selectedViewController;
 
 /**
  * Whether the basement is currently visible. Defaults to NO.

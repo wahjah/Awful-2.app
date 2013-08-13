@@ -6,22 +6,31 @@
 //
 
 #import "SABasementViewController.h"
+#import "SABasementItem.h"
+#import "SASidebarViewController.h"
 
 @interface SABasementViewController ()
 
-@property (nonatomic) NSArray *visibleBasementConstraints;
+@property (nonatomic) SASidebarViewController *sidebarViewController;
+@property (nonatomic) UIView *mainContainerView;
+@property (copy, nonatomic) NSArray *selectedViewControllerConstraints;
+@property (copy, nonatomic) NSArray *visibleBasementConstraints;
 
 @end
 
 @implementation SABasementViewController
 
-- (id)initWithBasementViewController:(UIViewController *)basementViewController
-                  mainViewController:(UIViewController *)mainViewController
+- (id)initWithViewControllers:(NSArray *)viewControllers
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        _basementViewController = basementViewController;
-        _mainViewController = mainViewController;
+        _viewControllers = [viewControllers copy];
+        _selectedViewController = _viewControllers[0];
+        NSMutableArray *items = [NSMutableArray new];
+        for (UIViewController *viewController in _viewControllers) {
+            [items addObject:[[SABasementItem alloc] initWithTitle:viewController.title]];
+        }
+        _sidebarViewController = [[SASidebarViewController alloc] initWithBasementItems:items];
     }
     return self;
 }
@@ -29,17 +38,17 @@
 - (void)loadView
 {
     self.view = [UIView new];
-    [self addChildViewController:self.mainViewController];
-    self.mainViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:self.mainViewController.view];
-    [self.mainViewController didMoveToParentViewController:self];
+    self.mainContainerView = [UIView new];
+    self.mainContainerView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.mainContainerView];
+    [self replaceMainViewController:nil withViewController:self.selectedViewController];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     UIView *root = self.view;
-    UIView *main = self.mainViewController.view;
+    UIView *main = self.mainContainerView;
     NSDictionary *views = NSDictionaryOfVariableBindings(root, main);
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0@750-[main(==root)]-0@750-|"
                                                                       options:0
@@ -52,6 +61,44 @@
     if (self.basementVisible) {
         [self showBasementAnimated:NO];
     }
+}
+
+- (void)setSelectedViewController:(UIViewController *)selectedViewController
+{
+    if (_selectedViewController == selectedViewController) {
+        return;
+    }
+    UIViewController *old = _selectedViewController;
+    _selectedViewController = selectedViewController;
+    if ([self isViewLoaded]) {
+        [self replaceMainViewController:old withViewController:selectedViewController];
+    }
+}
+
+- (void)replaceMainViewController:(UIViewController *)oldViewController
+               withViewController:(UIViewController *)newViewController
+{
+    [oldViewController willMoveToParentViewController:nil];
+    [self addChildViewController:newViewController];
+    [self.mainContainerView removeConstraints:self.selectedViewControllerConstraints ?: @[]];
+    [oldViewController.view removeFromSuperview];
+    newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.mainContainerView addSubview:newViewController.view];
+    NSMutableArray *constraints = [NSMutableArray new];
+    UIView *new = newViewController.view;
+    NSDictionary *views = NSDictionaryOfVariableBindings(new);
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[new]|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[new]|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:views]];
+    self.selectedViewControllerConstraints = constraints;
+    [self.mainContainerView addConstraints:constraints];
+    [oldViewController removeFromParentViewController];
+    [newViewController didMoveToParentViewController:self];
 }
 
 - (void)setBasementVisible:(BOOL)basementVisible
@@ -73,11 +120,11 @@
 
 - (void)showBasementAnimated:(BOOL)animated
 {
-    [self addBasementViewControllerAsChildIfNeeded];
-    UIView *basement = self.basementViewController.view;
-    UIView *main = self.mainViewController.view;
+    [self lazilyAddSidebarViewControllerAsChild];
+    UIView *basement = self.sidebarViewController.view;
+    UIView *main = self.mainContainerView;
     NSDictionary *views = NSDictionaryOfVariableBindings(basement, main);
-    self.visibleBasementConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|[basement][main]"
+    self.visibleBasementConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[basement][main]"
                                                                               options:0
                                                                               metrics:nil
                                                                                 views:views];
@@ -87,27 +134,6 @@
     }];
 }
 
-- (void)addBasementViewControllerAsChildIfNeeded
-{
-    if ([self.basementViewController.parentViewController isEqual:self]) {
-        return;
-    }
-    [self addChildViewController:self.basementViewController];
-    self.basementViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view insertSubview:self.basementViewController.view belowSubview:self.mainViewController.view];
-    [self.basementViewController didMoveToParentViewController:self];
-    UIView *basement = self.basementViewController.view;
-    NSDictionary *views = NSDictionaryOfVariableBindings(basement);
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[basement(==280)]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[basement]|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:views]];
-}
-
 - (void)hideBasementAnimated:(BOOL)animated
 {
     [self.view removeConstraints:self.visibleBasementConstraints];
@@ -115,6 +141,28 @@
     [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+
+- (void)lazilyAddSidebarViewControllerAsChild
+{
+    if ([self.sidebarViewController.parentViewController isEqual:self]) {
+        return;
+    }
+    [self addChildViewController:self.sidebarViewController];
+    self.sidebarViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view insertSubview:self.sidebarViewController.view belowSubview:self.mainContainerView];
+    [self.sidebarViewController didMoveToParentViewController:self];
+    UIView *basement = self.sidebarViewController.view;
+    id top = self.topLayoutGuide;
+    NSDictionary *views = NSDictionaryOfVariableBindings(basement, top);
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[basement(==280)]"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[top][basement]|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:views]];
 }
 
 @end

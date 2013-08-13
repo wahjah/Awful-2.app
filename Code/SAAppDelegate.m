@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    NSMutableArray *viewControllers = [NSMutableArray new];
     SALoginFormViewController *logIn = [SALoginFormViewController new];
     logIn.completionHandler = ^{
         UIAlertView *alert = [UIAlertView new];
@@ -28,16 +29,23 @@
         [alert addButtonWithTitle:@"OK"];
         [alert show];
     };
-    UIBarButtonItem *toggleBasementButton = [[UIBarButtonItem alloc] initWithTitle:@"☜"
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self
-                                                                            action:@selector(toggleBasement)];
-    logIn.navigationItem.leftBarButtonItem = toggleBasementButton;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logIn];
-    UIViewController *basement = [UIViewController new];
-    basement.view.backgroundColor = [UIColor orangeColor];
-    self.basementViewController = [[SABasementViewController alloc] initWithBasementViewController:basement
-                                                                                mainViewController:nav];
+    [viewControllers addObject:logIn];
+    for (NSString *title in @[ @"Forums", @"Bookmarks", @"Read Later", @"Messages", @"Search", @"Settings"]) {
+        UIViewController *viewController = [UIViewController new];
+        viewController.title = title;
+        [viewControllers addObject:viewController];
+    }
+    for (NSUInteger i = 0; i < viewControllers.count; i++) {
+        UIViewController *viewController = viewControllers[i];
+        UIBarButtonItem *toggleBasementButton = [[UIBarButtonItem alloc] initWithTitle:@"☜"
+                                                                                 style:UIBarButtonItemStyleBordered
+                                                                                target:self
+                                                                                action:@selector(toggleBasement)];
+        viewController.navigationItem.leftBarButtonItem = toggleBasementButton;
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [viewControllers replaceObjectAtIndex:i withObject:nav];
+    }
+    self.basementViewController = [[SABasementViewController alloc] initWithViewControllers:viewControllers];
     self.window.rootViewController = self.basementViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
