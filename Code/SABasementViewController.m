@@ -9,16 +9,41 @@
 #import "SABasementItem.h"
 #import "SASidebarViewController.h"
 
+/**
+ * An SABasementViewController runs this little state machine.
+ */
+typedef NS_ENUM(NSInteger, SABasementState)
+{
+    /**
+     * When in the SABasementStateHidden state, no part of the basement is visible.
+     */
+    SABasementStateHidden,
+    
+    /**
+     * When in the SABasementStateObscured state, part of the basement is visible, perhaps because the user is dragging the main view.
+     */
+    SABasementStateObscured,
+    
+    /**
+     * When in the SABasementStateVisible state, the whole basement is visible.
+     */
+    SABasementStateVisible,
+};
+
 @interface SABasementViewController () <SASidebarViewControllerDelegate>
 
-@property (nonatomic) SASidebarViewController *sidebarViewController;
-@property (nonatomic) UIView *mainContainerView;
+@property (assign, nonatomic) SABasementState state;
+@property (strong, nonatomic) SASidebarViewController *sidebarViewController;
+@property (strong, nonatomic) UIView *mainContainerView;
 @property (copy, nonatomic) NSArray *selectedViewControllerConstraints;
 @property (copy, nonatomic) NSArray *visibleBasementConstraints;
+@property (strong, nonatomic) NSLayoutConstraint *revealBasementConstraint;
 
 @end
 
 @implementation SABasementViewController
+
+@dynamic basementVisible; // Derived from the state property.
 
 - (id)initWithViewControllers:(NSArray *)viewControllers
 {
@@ -36,10 +61,28 @@
 - (void)loadView
 {
     self.view = [UIView new];
+    UIScreenEdgePanGestureRecognizer *pan = [UIScreenEdgePanGestureRecognizer new];
+    pan.edges = UIRectEdgeLeft;
+    [pan addTarget:self action:@selector(panFromLeftScreenEdge:)];
+    [self.view addGestureRecognizer:pan];
+    
     self.mainContainerView = [UIView new];
     self.mainContainerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.mainContainerView];
     [self replaceMainViewController:nil withViewController:self.selectedViewController];
+}
+
+- (void)panFromLeftScreenEdge:(UIScreenEdgePanGestureRecognizer *)pan
+{
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        self.state = SABasementStateObscured;
+        self.revealBasementConstraint.constant = [pan translationInView:self.view].x;
+    } else if (pan.state == UIGestureRecognizerStateChanged) {
+        self.revealBasementConstraint.constant = [pan translationInView:self.view].x;
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
+        [self setState:[pan velocityInView:self.view].x > 0 ? SABasementStateVisible : SABasementStateHidden
+              animated:YES];
+    }
 }
 
 - (void)viewDidLoad
@@ -48,7 +91,7 @@
     UIView *root = self.view;
     UIView *main = self.mainContainerView;
     NSDictionary *views = NSDictionaryOfVariableBindings(root, main);
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0@750-[main(==root)]-0@750-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0@500-[main(==root)]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];
@@ -57,7 +100,8 @@
                                                                       metrics:nil
                                                                         views:views]];
     if (self.basementVisible) {
-        [self showBasementAnimated:NO];
+        [self constrainBasementToBeVisible];
+        [self.view setNeedsLayout];
     }
 }
 
@@ -99,6 +143,11 @@
     [newViewController didMoveToParentViewController:self];
 }
 
+- (BOOL)basementVisible
+{
+    return self.state != SABasementStateHidden;
+}
+
 - (void)setBasementVisible:(BOOL)basementVisible
 {
     [self setBasementVisible:basementVisible animated:NO];
@@ -106,19 +155,65 @@
 
 - (void)setBasementVisible:(BOOL)basementVisible animated:(BOOL)animated
 {
-    if (basementVisible == _basementVisible) return;
-    _basementVisible = basementVisible;
-    if (![self isViewLoaded]) return;
-    if (basementVisible) {
-        [self showBasementAnimated:animated];
-    } else {
-        [self hideBasementAnimated:animated];
-    }
+    SABasementState newState = basementVisible ? SABasementStateVisible : SABasementStateHidden;
+    [self setState:newState animated:animated];
 }
 
-- (void)showBasementAnimated:(BOOL)animated
+- (void)setState:(SABasementState)state
 {
-    [self lazilyAddSidebarViewControllerAsChild];
+    [self setState:state animated:NO];
+}
+
+- (void)setState:(SABasementState)state animated:(BOOL)animated
+{
+    if (_state == state) return;
+    _state = state;
+    if (![self isViewLoaded]) return;
+    
+    if (state == SABasementStateHidden) {
+        if (self.revealBasementConstraint) {
+            [self.view removeConstraint:self.revealBasementConstraint];
+            self.revealBasementConstraint = nil;
+        }
+        if (self.visibleBasementConstraints) {
+            [self.view removeConstraints:self.visibleBasementConstraints];
+            self.visibleBasementConstraints = nil;
+        }
+    } else {
+        [self lazilyAddSidebarViewControllerAsChild];
+    }
+    
+    if (state == SABasementStateObscured) {
+        if (self.visibleBasementConstraints) {
+            [self.view removeConstraints:self.visibleBasementConstraints];
+            self.visibleBasementConstraints = nil;
+        }
+        self.revealBasementConstraint = [NSLayoutConstraint constraintWithItem:self.mainContainerView
+                                                                     attribute:NSLayoutAttributeLeft
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:self.view
+                                                                     attribute:NSLayoutAttributeLeft
+                                                                    multiplier:1
+                                                                      constant:0];
+        self.revealBasementConstraint.priority = 750;
+        [self.view addConstraint:self.revealBasementConstraint];
+    }
+    
+    if (state == SABasementStateVisible) {
+        if (self.revealBasementConstraint) {
+            [self.view removeConstraint:self.revealBasementConstraint];
+        }
+        [self constrainBasementToBeVisible];
+    }
+    
+    [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)constrainBasementToBeVisible
+{
+    if (self.visibleBasementConstraints) return;
     UIView *basement = self.sidebarViewController.view;
     UIView *main = self.mainContainerView;
     NSDictionary *views = NSDictionaryOfVariableBindings(basement, main);
@@ -127,18 +222,6 @@
                                                                               metrics:nil
                                                                                 views:views];
     [self.view addConstraints:self.visibleBasementConstraints];
-    [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
-        [self.view layoutIfNeeded];
-    }];
-}
-
-- (void)hideBasementAnimated:(BOOL)animated
-{
-    [self.view removeConstraints:self.visibleBasementConstraints];
-    self.visibleBasementConstraints = nil;
-    [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
-        [self.view layoutIfNeeded];
-    }];
 }
 
 - (void)lazilyAddSidebarViewControllerAsChild
