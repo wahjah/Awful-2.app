@@ -6,7 +6,14 @@
 //
 
 #import "SAAppDelegate.h"
+#import "SABasementViewController.h"
 #import "SALoginFormViewController.h"
+
+@interface SAAppDelegate ()
+
+@property (nonatomic) SABasementViewController *basementViewController;
+
+@end
 
 @implementation SAAppDelegate
 
@@ -21,11 +28,25 @@
         [alert addButtonWithTitle:@"OK"];
         [alert show];
     };
+    UIBarButtonItem *toggleBasementButton = [[UIBarButtonItem alloc] initWithTitle:@"☜"
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self
+                                                                            action:@selector(toggleBasement)];
+    logIn.navigationItem.leftBarButtonItem = toggleBasementButton;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logIn];
-    self.window.rootViewController = nav;
+    UIViewController *basement = [UIViewController new];
+    basement.view.backgroundColor = [UIColor orangeColor];
+    self.basementViewController = [[SABasementViewController alloc] initWithBasementViewController:basement
+                                                                                mainViewController:nav];
+    self.window.rootViewController = self.basementViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)toggleBasement
+{
+    [self.basementViewController setBasementVisible:!self.basementViewController.basementVisible animated:YES];
 }
 
 @end

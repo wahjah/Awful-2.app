@@ -29,6 +29,8 @@
 - (void)loadView
 {
     self.view = [UIView new];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     UITextField *username = [UITextField new];
     username.translatesAutoresizingMaskIntoConstraints = NO;
     username.placeholder = @"Username";
