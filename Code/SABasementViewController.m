@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, SABasementState)
 @property (copy, nonatomic) NSArray *selectedViewControllerConstraints;
 @property (copy, nonatomic) NSArray *visibleBasementConstraints;
 @property (strong, nonatomic) NSLayoutConstraint *revealBasementConstraint;
+@property (strong, nonatomic) UITapGestureRecognizer *mainViewTap;
+@property (strong, nonatomic) UIPanGestureRecognizer *mainViewPan;
 
 @end
 
@@ -197,6 +199,11 @@ typedef NS_ENUM(NSInteger, SABasementState)
                                                                       constant:0];
         self.revealBasementConstraint.priority = 750;
         [self.view addConstraint:self.revealBasementConstraint];
+    } else {
+        if (self.mainViewPan) {
+            [self.mainViewPan.view removeGestureRecognizer:self.mainViewPan];
+            self.mainViewPan = nil;
+        }
     }
     
     if (state == SABasementStateVisible) {
@@ -204,6 +211,17 @@ typedef NS_ENUM(NSInteger, SABasementState)
             [self.view removeConstraint:self.revealBasementConstraint];
         }
         [self constrainBasementToBeVisible];
+        self.mainViewTap = [UITapGestureRecognizer new];
+        [self.mainViewTap addTarget:self action:@selector(tapMainView)];
+        [self.mainContainerView addGestureRecognizer:self.mainViewTap];
+        self.mainViewPan = [UIPanGestureRecognizer new];
+        [self.mainViewPan addTarget:self action:@selector(panMainView:)];
+        [self.mainContainerView addGestureRecognizer:self.mainViewPan];
+    } else {
+        if (self.mainViewTap) {
+            [self.mainViewTap.view removeGestureRecognizer:self.mainViewTap];
+            self.mainViewTap = nil;
+        }
     }
     
     [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
@@ -244,6 +262,27 @@ typedef NS_ENUM(NSInteger, SABasementState)
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];
+}
+
+- (void)tapMainView
+{
+    [self setBasementVisible:NO animated:YES];
+}
+
+- (void)panMainView:(UIPanGestureRecognizer *)pan
+{
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        CGPoint start = CGPointMake(CGRectGetMinX(self.mainContainerView.frame), 0);
+        start.x += [pan translationInView:pan.view].x;
+        [pan setTranslation:start inView:self.view];
+        self.state = SABasementStateObscured;
+        self.revealBasementConstraint.constant = [pan translationInView:self.view].x;
+    } else if (pan.state == UIGestureRecognizerStateChanged) {
+        self.revealBasementConstraint.constant = [pan translationInView:self.view].x;
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
+        [self setState:[pan velocityInView:self.view].x > 0 ? SABasementStateVisible : SABasementStateHidden
+              animated:YES];
+    }
 }
 
 #pragma mark SASidebarViewControllerDelegate
