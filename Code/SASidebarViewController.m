@@ -7,7 +7,6 @@
 
 #import "SASidebarViewController.h"
 #import "SABasementItem.h"
-#import "UIFont+SAFontVariant.h"
 
 @interface SASidebarTableViewCell : UITableViewCell
 
@@ -96,8 +95,15 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    UIFont *font = self.textLabel.font;
-    self.textLabel.font = selected ? [font boldVariant] : [font normalVariant];
+    UIFontDescriptor *fontDescriptor = self.textLabel.font.fontDescriptor;
+    UIFontDescriptorSymbolicTraits newTraits = fontDescriptor.symbolicTraits;
+    if (selected) {
+        newTraits |= UIFontDescriptorTraitBold;
+    } else {
+        newTraits &= ~(UIFontDescriptorTraitBold | UIFontDescriptorTraitItalic);
+    }
+    UIFontDescriptor *newDescriptor = [fontDescriptor fontDescriptorWithSymbolicTraits:newTraits];
+    self.textLabel.font = [UIFont fontWithDescriptor:newDescriptor size:0];
 }
 
 @end
