@@ -7,6 +7,7 @@
 
 #import "SAAppDelegate.h"
 #import "SABasementViewController.h"
+#import "SAForumsClient.h"
 #import "SALoginFormViewController.h"
 
 @interface SAAppDelegate ()
@@ -21,16 +22,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     NSMutableArray *viewControllers = [NSMutableArray new];
-    SALoginFormViewController *logIn = [SALoginFormViewController new];
-    logIn.completionHandler = ^{
-        UIAlertView *alert = [UIAlertView new];
-        alert.title = @"Logged in!";
-        alert.message = @"Good job I guess.";
-        [alert addButtonWithTitle:@"OK"];
-        [alert show];
-    };
-    [viewControllers addObject:logIn];
-    for (NSString *title in @[ @"Forums", @"Bookmarks", @"Read Later", @"Messages", @"Search", @"Settings"]) {
+    NSArray *titles = @[ @"Forums", @"Bookmarks", @"Read Later", @"Messages", @"Search", @"Settings",
+                         @"Archives", @"Leper's Colony", @"Buddy List", @"SAclopedia", @"Posting Gloryhole",
+                         @"Awful's Thread" ];
+    for (NSString *title in titles) {
         UIViewController *viewController = [UIViewController new];
         viewController.title = title;
         viewController.view.backgroundColor = [UIColor whiteColor];
@@ -50,6 +45,14 @@
     self.window.rootViewController = self.basementViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    if (![SAForumsClient client].loggedInUserID) {
+        SALoginFormViewController *logIn = [SALoginFormViewController new];
+        logIn.completionHandler = ^{
+            [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+        };
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logIn];
+        [self.window.rootViewController presentViewController:nav animated:NO completion:nil];
+    }
     return YES;
 }
 
