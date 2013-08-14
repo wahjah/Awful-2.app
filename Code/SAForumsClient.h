@@ -37,6 +37,19 @@
                                    password:(NSString *)password
                           completionHandler:(void (^)(NSError *error))completionHandler;
 
+/**
+ * Fetches posts.
+ *
+ * @param threadID The ID of the thread with the posts.
+ * @param page The 1-indexed page of posts to fetch.
+ * @param completionHandler A block to call after fetching posts. The block has no return value and takes two parameters: nil on success, or an NSError instance describing the failure; and an array of NSAttributedString instances representing the posts on success, or nil on failure.
+ *
+ * @return The started `NSURLSessionDataTask` for fetching posts.
+ */
+- (NSURLSessionDataTask *)fetchPostsFromThreadWithID:(NSString *)threadID
+                                                page:(NSInteger)page
+                                   completionHandler:(void (^)(NSError *error, NSArray *posts))completionHandler;
+
 @end
 
 /**

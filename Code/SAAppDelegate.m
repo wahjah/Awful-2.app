@@ -9,6 +9,7 @@
 #import "SABasementViewController.h"
 #import "SAForumsClient.h"
 #import "SALoginFormViewController.h"
+#import "SAThreadViewController.h"
 
 @interface SAAppDelegate ()
 
@@ -23,14 +24,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     NSMutableArray *viewControllers = [NSMutableArray new];
     NSArray *titles = @[ @"Forums", @"Bookmarks", @"Read Later", @"Messages", @"Search", @"Settings",
-                         @"Archives", @"Leper's Colony", @"Buddy List", @"SAclopedia", @"Posting Gloryhole",
-                         @"Awful's Thread" ];
+                         @"Archives", @"Leper's Colony", @"Buddy List", @"SAclopedia", @"Posting Gloryhole" ];
     for (NSString *title in titles) {
         UIViewController *viewController = [UIViewController new];
         viewController.title = title;
         viewController.view.backgroundColor = [UIColor whiteColor];
         [viewControllers addObject:viewController];
     }
+    SAThreadViewController *awfulThread = [[SAThreadViewController alloc] initWithThreadID:@"3564303"];
+    awfulThread.title = @"Awful's Thread";
+    [viewControllers addObject:awfulThread];
     for (NSUInteger i = 0; i < viewControllers.count; i++) {
         UIViewController *viewController = viewControllers[i];
         UIBarButtonItem *toggleBasementButton = [[UIBarButtonItem alloc] initWithTitle:@"☜"
