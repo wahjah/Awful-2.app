@@ -3,7 +3,6 @@
 //  HTMLReader
 //
 //  Created by Nolan Waite on 2013-07-02.
-//  Copyright (c) 2013 Nolan Waite. All rights reserved.
 //
 
 #import "HTMLParser.h"
@@ -193,7 +192,13 @@ static inline NSString * NSStringFromHTMLInsertionMode(HTMLInsertionMode mode)
     }
     [self processToken:[HTMLEOFToken new]];
     if (_context) {
-        _document.childNodes = [_document.childNodes[0] childNodes];
+        HTMLNode *root = _document.childNodes[0];
+        while (_document.childNodes.count > 0) {
+            [_document removeChild:_document.childNodes[0]];
+        }
+        for (HTMLNode *child in root.childNodes) {
+            [_document appendChild:child];
+        }
     }
     return _document;
 }
