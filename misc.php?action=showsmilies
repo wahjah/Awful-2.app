@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Something Awful Forums - Smilies</title>
+	<meta http-equiv="Content-type" content="text/html;charset=iso-8859-1">
+
+	<meta name="MSSmartTagsPreventParsing" content="TRUE">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="/css/ie.css?1348360344"><![endif]-->
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="/css/ie7.css?1348360344"><![endif]-->
+	<link rel="apple-touch-icon" href="http://i.somethingawful.com/core/icon/iphone-touch/forums.png">
+	<link rel="stylesheet" type="text/css" href="/css/main.css?1359594161">
+	<link rel="stylesheet" type="text/css" href="/css/bbcode.css?1348360344">
+	<link rel="stylesheet" type="text/css" href="http://www.somethingawful.com/globalcss/globalmenu.css">
+
+	
+	<style type="text/css">
+		#content { margin-left:170px; }
+	</style>
+	
+
+	<!-- <script src="/__utm.js" type="text/javascript"></script> -->
+	<!-- script src="/js/dojo/dojo.js?1348360344" type="text/javascript"></script -->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/redmond/jquery-ui.css">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="http://www.somethingawful.com/css/forums.css?7">
+
+	
+
+	<script type="text/javascript">
+		
+		
+		disable_thread_coloring = true;
+		daa = true;
+	</script>
+
+	<script type="text/javascript" src="/js/vb/forums.combined.js?1359653372"></script>
+
+	
+
+	<!-- ts-specific includes -->
+	
+	
+	
+
+	
+
+	
+
+	
+	<script type="text/javascript">
+		/* <![CDATA[ */	
+
+       function cb(txt) {
+           if(window.clipboardData) {
+               window.clipboardData.setData("Text", txt);
+           } else {
+               var fc = 'fc';
+               if(!document.getElementById(fc)) {
+                   var dh = document.createElement('div');
+                   dh.id = fc;
+                   document.body.appendChild(dh);
+               }
+               document.getElementById(fc).innerHTML = '';
+               var di = '<embed src="http://www.somethingawful.com/forums/_clipboard.swf" FlashVars="clipboard='+escape(txt)+'" width="0" height="0" type="application/x-shockwave-flash"' + '><' + '/embed>';
+               document.getElementById(fc).innerHTML = di;
+           }
+       }
+
+		dojo.addOnLoad(function() {
+			var lis = dojo.html.getElementsByClass('smilie');
+			for(i = 0; i < lis.length; i++) {
+				var li = lis[i];
+				dojo.event.connect(li, 'onclick', function(e) { get_text(e.currentTarget); return true; });
+			}
+		});
+
+		function get_text(el) {
+			if(el.tagName != 'LI') return;
+			smtext = dojo.html.getElementsByClass('text', el)[0].innerHTML;
+			cb(smtext);
+		}
+
+		/* ]]> */
+	</script>
+</head>
+<body id="something_awful" class="smilies">
+<div id="globalmenu">
+	<ul>
+		<li class="first"><a href="https://secure.somethingawful.com/">Buy Forum Stuff</a></li>
+		<li><a href="http://www.somethingawful.com/">Something Awful</a></li>
+	</ul>
+</div>
+
+
+
+<div id="container">
+
+
+	<!-- search boxes -->
+	<div id="searchboxes">
+		<form id="amazon" action="http://somethingawful.com/shop/bounce.php" method="get">
+		<div><a href="http://somethingawful.com/shop/bounce.php?l=amazon">Search Amazon.com:</a> <input class="text" type="text" name="keyword" size="20" value=""><input type="hidden" name="mode" value="blended"><input type="hidden" name="tag" value="somethingawfu-20"><input type="hidden" name="l" value="azsearch"> <input type="submit" name="Submit" value="Go"></div>
+		</form>
+	</div>
+	<!-- end search boxes -->
+
+
+	
+
+	<ul id="nav_purchase">
+		<li><b>Purchase:</b></li>
+		<li><a href="https://secure.somethingawful.com/products/register.php">Account</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/platinum.php">Platinum Upgrade</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/titlechange.php">New Avatar</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/titlechange.php">Other's Avatar</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/archives.php">Archives</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/noads.php">No-Ads</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/namechange.php">New Username</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/ad-banner.php">Banner Advertisement</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/smilie.php">Smilie</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/sticky-thread.php">Stick Thread</a></li>
+		<li>- <a href="https://secure.somethingawful.com/products/gift-certificate.php">Gift Cert.</a></li>
+	</ul>
+
+	<ul id="navigation" class="navigation">
+<li class="first"><a href="/index.php">SA Forums</a></li>
+<li>- <a href="http://www.somethingawful.com/">Something Awful</a></li>
+<li>- <a href="/f/search">Search the Forums</a></li>
+<li>- <a href="/usercp.php">User Control Panel</a></li>
+<li>- <a href="/private.php">Private Messages</a></li>
+<li>- <a href="http://www.somethingawful.com/d/forum-rules/forum-rules.php">Forum Rules</a></li>
+<li>- <a href="/dictionary.php">SAclopedia</a></li>
+<li>- <a href="/stats.php">Posting Gloryhole</a></li>
+<li>- <a href="/banlist.php">Leper's Colony</a></li>
+<li>- <a href="/supportmail.php">Support</a></li>
+
+<li>- <a href="/account.php?action=loginform&amp;next=%2Fmisc.php%3Faction%3Dshowsmilies#form">*** LOG IN ***</a></li>
+</ul>
+
+
+
+
+	<!-- google_ad_section_start(weight=ignore) -->
+<div id="notregistered">
+	<a href="https://secure.somethingawful.com/products/register.php">Register a SA Forums Account here!</a><br>
+	<b>JOINING THE SA FORUMS WILL REMOVE THIS BIG AD, THE ANNOYING UNDERLINED ADS, AND STUPID INTERSTITIAL ADS!!!</b><br>
+
+	<div class="oma_pal">
+		<!--  Begin Rubicon Project Tag -->
+<!--  Site: Something Awful LLC   Zone: Forum ATF Top Quality - Mobile, Pop, Web   Size: Leaderboard  -->
+<!--  PLACEMENT: Above the Fold  -->
+<script language="JavaScript" type="text/javascript">
+rp_account   = '8539';
+rp_site      = '13831';
+rp_zonesize  = '80354-2';
+rp_adtype    = 'iframe';
+rp_width     = '728';
+rp_height    = '90';
+rp_smartfile = 'http://www.somethingawful.com/revv_smart_file.html';
+</script>
+<script type="text/javascript" src="https://ads.rubiconproject.com/ad/8539.js"></script>
+<!--  End Rubicon Project Tag -->
+	</div>
+	<br>
+	<div class="mainbodytext" align="center"><font size=-2>You can: <a href="/account.php?action=loginform&amp;next=%2Fmisc.php%3Faction%3Dshowsmilies#form">log in</a>, <a href="/supportmail.php">read the tech support FAQ</a>, or <a href="/account.php?action=lostpw">request your lost password</a>. This dumb message (and those ads) will appear on every screen until you register! Get rid of this crap by <a href="https://secure.somethingawful.com/products/register.php">registering your own SA Forums Account and joining roughly 150,000 Goons, for the <b>one-time</b> price of $9.95!</a> We charge money because it costs us $3,400 <strong>per month</strong> for bandwidth bills alone, and since we don't believe in shoving popup ads to our registered users, we try to make the money back through forum registrations.</font></div>
+</div>
+<!-- google_ad_section_end -->
+
+
+
+	<div id="unregskyscraper">
+		<!--  Begin Rubicon Project Tag -->
+<!--  Site: Something Awful LLC   Zone: Forum ATF Top Quality - Mobile, Pop, Web   Size: Wide Skyscraper  -->
+<!--  PLACEMENT: Above the Fold  -->
+<script language="JavaScript" type="text/javascript">
+rp_account   = '8539';
+rp_site      = '13831';
+rp_zonesize  = '80354-9';
+rp_adtype    = 'iframe';
+rp_width     = '160';
+rp_height    = '600';
+rp_smartfile = 'http://www.somethingawful.com/revv_smart_file.html';
+</script>
+<script type="text/javascript" src="https://ads.rubiconproject.com/ad/8539.js"></script>
+<!--  End Rubicon Project Tag -->
+	</div>
+
+
+	<div id="content">
+
+	
+
+<br>
+
+<div class="standard smilie_list" id="main_full">
+	<h2>Smilies</h2>
+	<div class="inner">
+	Smilies are small graphical images that can be used to convey an emotion or
+	feeling.  If you have used email or internet chat, you are likely familiar
+	with the smilie concept.  Certain standard strings are automatically
+	converted into smilies.  Try twisting your head on one side if you do not
+	get smilies; using a bit of imagination should reveal a face of some
+	description.<br>
+	<br>
+	<b>You can click a smilie to copy the smilie text to your clipboard (if your browser supports it).</b><br>
+	<br>
+	Here's the list of currently accepted smilies:<br>
+	<br>
+
+	<h3>Basic Smilies</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:(</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/frown.gif" title="frown">
+	<li class="smilie">
+		<div class="text">:)</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/smile.gif" title="smile">
+	<li class="smilie">
+		<div class="text">:3:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-3.gif" title="kitty face">
+	<li class="smilie">
+		<div class="text">:aaa:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-aaa.gif" title="my mouth is opening oh no">
+	<li class="smilie">
+		<div class="text">:aaaaa:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-aaaaa.gif" title="AAAAAAHHHHHHHHH!">
+	<li class="smilie">
+		<div class="text">:airquote:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-airquote.gif" title="metaironysarcasm quoting">
+	<li class="smilie">
+		<div class="text">:allears:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-allears.gif" title="All Ears">
+	<li class="smilie">
+		<div class="text">:angel:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-angel.gif" title="sop babys">
+	<li class="smilie">
+		<div class="text">:argh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-argh.gif" title="Argh!">
+	<li class="smilie">
+		<div class="text">:arghfist:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-arghfist.gif" title="SO ANGRY">
+	<li class="smilie">
+		<div class="text">:bang:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-bang.gif" title="Banging head against the wall">
+	<li class="smilie">
+		<div class="text">:banjo:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-banjo.gif" title="Some banjo thing somebody bought for some great reason I suppose">
+	<li class="smilie">
+		<div class="text">:black101:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-black101.gif" title="Grimm and frostbitten">
+	<li class="smilie">
+		<div class="text">:blush:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-blush.gif" title="Oh... heh, I was just...">
+	<li class="smilie">
+		<div class="text">:bravo2:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bravo2.gif" title="wordjo">
+	<li class="smilie">
+		<div class="text">:butt:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-butt.gif" title="butt">
+	<li class="smilie">
+		<div class="text">:catholic:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-catholic.gif" title="A Pope culture icon.">
+	<li class="smilie">
+		<div class="text">:cawg:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-cawg.gif" title="Cackling Aloud With Gusto">
+	<li class="smilie">
+		<div class="text">:cb:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-clownballoon.gif" title="Clownballoon is coming...!">
+	<li class="smilie">
+		<div class="text">:cheeky:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/d/cheeky.001.gif" title="smilie with a protruding tongue">
+	<li class="smilie">
+		<div class="text">:cheers:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-cheers.gif" title="Here's to us!">
+	<li class="smilie">
+		<div class="text">:chef:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-chef.gif" title="I am the chef!">
+	<li class="smilie">
+		<div class="text">:choco:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/choco.gif" title="Choo!">
+	<li class="smilie">
+		<div class="text">:clint:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-clint.gif" title="i'm a cowboy baby">
+	<li class="smilie">
+		<div class="text">:coffee:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-coffee.gif" title="best part of waking up!">
+	<li class="smilie">
+		<div class="text">:colbert:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-colbert.gif" title="crossarms">
+	<li class="smilie">
+		<div class="text">:comeback:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-comeback.gif" title="They're coming back!">
+	<li class="smilie">
+		<div class="text">:commissar:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-commissar.gif" title="Summary Execution">
+	<li class="smilie">
+		<div class="text">:confused:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/confused.gif" title="confused">
+	<li class="smilie">
+		<div class="text">:cool:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/cool.gif" title="cool">
+	<li class="smilie">
+		<div class="text">:cop:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-cop.gif" title="I'm a cop you idiot!">
+	<li class="smilie">
+		<div class="text">:crossarms:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-crossarms.gif" title="colbert">
+	<li class="smilie">
+		<div class="text">:cry:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-crying.gif" title="Some kind of zombie chewing tobacco and crying I guess">
+	<li class="smilie">
+		<div class="text">:cthulhu:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-cthulhu.gif" title="Cthulhu">
+	<li class="smilie">
+		<div class="text">:D</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/biggrin.gif" title="big grin">
+	<li class="smilie">
+		<div class="text">:dance:</div>
+		<img alt="" src="http://i.somethingawful.com/images/emot-dance.gif" title="Dance">
+	<li class="smilie">
+		<div class="text">:devil:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-devil.gif" title="Demonology 101">
+	<li class="smilie">
+		<div class="text">:dings:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-dings.gif" title="Dings">
+	<li class="smilie">
+		<div class="text">:doh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-doh.gif" title="D'oh!">
+	<li class="smilie">
+		<div class="text">:downs:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-downs.gif" title="Yaaaay!  Happy happy yay!">
+	<li class="smilie">
+		<div class="text">:downsgun:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-downsgun.gif" title="Downs botches suicide">
+	<li class="smilie">
+		<div class="text">:downswords:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-downswords.gif" title="listen to me :(">
+	<li class="smilie">
+		<div class="text">:drac:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-drac.gif" title="Dracula is coming">
+	<li class="smilie">
+		<div class="text">:eek:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-eek.gif" title="Eek">
+	<li class="smilie">
+		<div class="text">:emo:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-emo.gif" title="Emo">
+	<li class="smilie">
+		<div class="text">:eng101:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-eng101.gif" title="I don't know">
+	<li class="smilie">
+		<div class="text">:eng99:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-eng99.gif" title="Sad eng101">
+	<li class="smilie">
+		<div class="text">:engleft:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-engleft.gif" title="Eng Left">
+	<li class="smilie">
+		<div class="text">:eyepop:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/a/eyepop.001.gif" title=":eyepop:">
+	<li class="smilie">
+		<div class="text">:f5:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-f5.gif" title="pres butan to go">
+	<li class="smilie">
+		<div class="text">:f5h:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-f5h.gif" title="F5 Hand">
+	<li class="smilie">
+		<div class="text">:fap:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fappery.gif" title="Fapping off">
+	<li class="smilie">
+		<div class="text">:fh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fh.gif" title="JERK JERK JERK JERK">
+	<li class="smilie">
+		<div class="text">:flame:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-flame.gif" title="Mr. V gets roasted">
+	<li class="smilie">
+		<div class="text">:gay:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gay.gif" title="not straight">
+	<li class="smilie">
+		<div class="text">:geno:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-geno.gif" title="The Path is Grey">
+	<li class="smilie">
+		<div class="text">:ghost:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ghost.gif" title="Boo">
+	<li class="smilie">
+		<div class="text">:gibs:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gibs.gif" title="Gibs">
+	<li class="smilie">
+		<div class="text">:glomp:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-glomp.gif" title="BLATANTLY STOLEN FROM DEVIANTART">
+	<li class="smilie">
+		<div class="text">:golfclap:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-golfclap.gif" title="nice job my nigga">
+	<li class="smilie">
+		<div class="text">:gonk:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gonk.gif" title="GONK">
+	<li class="smilie">
+		<div class="text">:greatgift:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-greatgift.gif" title="great gifts for dads and grads">
+	<li class="smilie">
+		<div class="text">:haw:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-haw.gif" title="Haw haw haw">
+	<li class="smilie">
+		<div class="text">:hawaaaafap:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hawaaaafap.gif" title="tha lowride bitch">
+	<li class="smilie">
+		<div class="text">:hehe:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hehe.gif" title="Heh.">
+	<li class="smilie">
+		<div class="text">:heysexy:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/6/heysexy.001.gif" title="Hey sexy">
+	<li class="smilie">
+		<div class="text">:hf:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hf.gif" title="You can hi-five stuff now">
+	<li class="smilie">
+		<div class="text">:hfive:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hfive.gif" title="Hi five it up nigga">
+	<li class="smilie">
+		<div class="text">:hist101:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hist101.gif" title="S P Q R">
+	<li class="smilie">
+		<div class="text">:holy:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-holy.gif" title="holy dance">
+	<li class="smilie">
+		<div class="text">:huh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-huh.gif" title="huh">
+	<li class="smilie">
+		<div class="text">:hydrogen:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hydrogen.gif" title="Hydrogen">
+	<li class="smilie">
+		<div class="text">:j:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-j.gif" title="j is for Jansie">
+	<li class="smilie">
+		<div class="text">:jerkbag:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-jerkbag.gif" title="god damn your post sucks">
+	<li class="smilie">
+		<div class="text">:jewish:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-jewish.gif" title="Orthodox Jew with Torah">
+	<li class="smilie">
+		<div class="text">:jihad:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-jihad.gif" title="ALLAH ACKBAR!!!1">
+	<li class="smilie">
+		<div class="text">:keke:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-keke.gif" title="kekekekekekeke">
+	<li class="smilie">
+		<div class="text">:kimchi:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/kimchi.gif" title="Kimchi">
+	<li class="smilie">
+		<div class="text">:mad:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/mad.gif" title="mad">
+	<li class="smilie">
+		<div class="text">:mmmhmm:</div>
+		<img alt="" src="http://fi.somethingawful.com/smilies/mmmhmm.gif" title="MMMM HMM...">
+	<li class="smilie">
+		<div class="text">:monocle:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-monocle.gif" title="Oh my!  What a saucy lad!">
+	<li class="smilie">
+		<div class="text">:morning:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/coffee.gif" title="morning coffee">
+	<li class="smilie">
+		<div class="text">:munch:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-munch.gif" title="this is gonna be good">
+	<li class="smilie">
+		<div class="text">:neckbeard:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-neckbeard.gif" title="neckbeard emot u say?">
+	<li class="smilie">
+		<div class="text">:newfap:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/d/newfap.001.gif" title="Fap fap fap fap fap fap fap!">
+	<li class="smilie">
+		<div class="text">:newlol:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/d/newlol.001.gif" title="LOL">
+	<li class="smilie">
+		<div class="text">:niggly:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-niggly.gif" title="Nigglypuff rules.">
+	<li class="smilie">
+		<div class="text">:ninja:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ninja.gif" title="Ninja">
+	<li class="smilie">
+		<div class="text">:nyd:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-nyd.gif" title="Oh no you didn't">
+	<li class="smilie">
+		<div class="text">:o:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/redface.gif" title="embarrasment">
+	<li class="smilie">
+		<div class="text">:ohdear:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ohdear.png" title="oh no lidge">
+	<li class="smilie">
+		<div class="text">:ohdearsass:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/c/3/ohdearsass.001.png" title="Worried Santa">
+	<li class="smilie">
+		<div class="text">:pedo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pedo.gif" title="Come here little kiddie">
+	<li class="smilie">
+		<div class="text">:pervert:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pervert.gif" title="Comin' to get ya">
+	<li class="smilie">
+		<div class="text">:pirate:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-pirate.gif" title="Pirate">
+	<li class="smilie">
+		<div class="text">:pray:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pray.gif" title="all old folks go 2 heaven">
+	<li class="smilie">
+		<div class="text">:pseudo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pseudo.gif" title="Pseudo science">
+	<li class="smilie">
+		<div class="text">:raise:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-raise.gif" title="Raising Eyebrow">
+	<li class="smilie">
+		<div class="text">:rant:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-rant.gif" title="angry smiley ranting GRRR">
+	<li class="smilie">
+		<div class="text">:reject:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-reject.gif" title="Disapproving obese smiley">
+	<li class="smilie">
+		<div class="text">:respek:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-respek.gif" title="Respek">
+	<li class="smilie">
+		<div class="text">:rimshot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-rimshot.gif" title="Rimshot">
+	<li class="smilie">
+		<div class="text">:roboluv:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-roboluv.gif" title="miss u Dono">
+	<li class="smilie">
+		<div class="text">:rock:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-rock.gif" title="Rock">
+	<li class="smilie">
+		<div class="text">:roflolmao:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-roflolmao.gif" title="roflolmao">
+	<li class="smilie">
+		<div class="text">:rolleye:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-rolleye.gif" title="Rolleye">
+	<li class="smilie">
+		<div class="text">:rolleyes:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/rolleyes.gif" title="roll eyes (sarcastic)">
+	<li class="smilie">
+		<div class="text">:saddowns:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-saddowns.gif" title="Awww. Booo.">
+	<li class="smilie">
+		<div class="text">:sassargh:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/7/sassargh.001.gif" title="coal again?!">
+	<li class="smilie">
+		<div class="text">:science:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-science.gif" title="For Science!">
+	<li class="smilie">
+		<div class="text">:shlick:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shlick.gif" title="shlick">
+	<li class="smilie">
+		<div class="text">:shobon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shobon.gif" title="Shobon... (deflated)">
+	<li class="smilie">
+		<div class="text">:shrug:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/4/1/shrug.001.gif" title="shrug">
+	<li class="smilie">
+		<div class="text">:sigh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sigh.gif" title="oh sigh">
+	<li class="smilie">
+		<div class="text">:silent:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-silent.gif" title="Nothing clever to say">
+	<li class="smilie">
+		<div class="text">:siren:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-siren.gif" title="Breaking News Developing...">
+	<li class="smilie">
+		<div class="text">:smuggo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smuggo.gif" title="Smuggo">
+	<li class="smilie">
+		<div class="text">:ssh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ssh.gif" title="aardvarko">
+	<li class="smilie">
+		<div class="text">:ssj:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-ssj.gif" title="ssj">
+	<li class="smilie">
+		<div class="text">:stare:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-stare.gif" title="Astonished stare">
+	<li class="smilie">
+		<div class="text">:stonk:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/9/stonk.001.gif" title="oh fuck no!">
+	<li class="smilie">
+		<div class="text">:suicide:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-suicide.gif" title="Suicide is the best side.">
+	<li class="smilie">
+		<div class="text">:sun:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sun.gif" title="A beaming sun">
+	<li class="smilie">
+		<div class="text">:supaburn:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-supaburn.gif" title="o snap that burn was fire">
+	<li class="smilie">
+		<div class="text">:sweatdrop:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sweatdrop.gif" title="oh my i am embarassed">
+	<li class="smilie">
+		<div class="text">:swoon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-swoon.gif" title="Love eyes">
+	<li class="smilie">
+		<div class="text">:sympathy:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sympathy.gif" title="It'll be ok :(">
+	<li class="smilie">
+		<div class="text">:tinfoil:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tinfoil.gif" title="Tinfoil hat">
+	<li class="smilie">
+		<div class="text">:tipshat:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tiphat.gif" title="Tip of the Hat">
+	<li class="smilie">
+		<div class="text">:tizzy:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tizzy.gif" title="twistmaster tizz">
+	<li class="smilie">
+		<div class="text">:toot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-toot.gif" title="Toots">
+	<li class="smilie">
+		<div class="text">:twisted:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-twisted.gif" title="Twisted">
+	<li class="smilie">
+		<div class="text">:v:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-v.gif" title="v">
+	<li class="smilie">
+		<div class="text">:what:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-what.gif" title="what">
+	<li class="smilie">
+		<div class="text">:whip:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-whip.gif" title="Whip it good">
+	<li class="smilie">
+		<div class="text">:witch:</div>
+		<img alt="" src="http://i.somethingawful.com/images/emot-witch.gif" title="Witch Hunt!!!">
+	<li class="smilie">
+		<div class="text">:woop:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-woop.gif" title="citizen slang bro">
+	<li class="smilie">
+		<div class="text">:words:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-words.gif" title="a shovel (for digging)">
+	<li class="smilie">
+		<div class="text">:worship:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-worship.gif" title="bow">
+	<li class="smilie">
+		<div class="text">:wth:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wth.gif" title="what the hell?">
+	<li class="smilie">
+		<div class="text">:xd:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-xd.gif" title="XD">
+	<li class="smilie">
+		<div class="text">:yarr:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-yarr.gif" title="Yarr!">
+	<li class="smilie">
+		<div class="text">:yotj:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/6/yotj.001.gif" title="YOTJ">
+	<li class="smilie">
+		<div class="text">:yum:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/9/yum.001.gif" title="cereal!">
+	<li class="smilie">
+		<div class="text">:zombie:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-zombie.gif" title="Zombie">
+	<li class="smilie">
+		<div class="text">:zoro:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-zoro.gif" title="Zoro's Badass moment">
+	<li class="smilie">
+		<div class="text">;)</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/wink.gif" title="wink">
+	<li class="smilie">
+		<div class="text">;-*</div>
+		<img alt="" src="http://i.somethingawful.com/mjolnir/images/livestock~01-14-04-whore.gif" title="Oh you lustful devil you">
+</ul>
+
+<h3>Mostly text</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:10bux:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-10bux.gif" title="Hope u got 10 bux">
+	<li class="smilie">
+		<div class="text">:20bux:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-20bux.gif" title="This cost 20 bux">
+	<li class="smilie">
+		<div class="text">:69snypa:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/69snypa.gif" title="Pg 69 Snypa">
+	<li class="smilie">
+		<div class="text">:banme:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-banme.gif" title="banme">
+	<li class="smilie">
+		<div class="text">:bunt:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/9/bunt.001.gif" title="Bunt">
+	<li class="smilie">
+		<div class="text">:byewhore:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-byewhore.gif" title="Bye bye, whore!">
+	<li class="smilie">
+		<div class="text">:byob:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-byob.gif" title="BYOB Bitches">
+	<li class="smilie">
+		<div class="text">:cadfan:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/f/cadfan.001.gif" title="We are the CAD [Fans]">
+	<li class="smilie">
+		<div class="text">:clegg:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/7/clegg.001.gif" title="UK Deputy PM's belief system.">
+	<li class="smilie">
+		<div class="text">:cmon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-cmon.gif" title="C'mon Son!">
+	<li class="smilie">
+		<div class="text">:coupons:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-coupons.gif" title="How to crash the forums">
+	<li class="smilie">
+		<div class="text">:damn:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-damn.gif" title="......DAMN!">
+	<li class="smilie">
+		<div class="text">:darksouls:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/c/darksouls.001.gif" title="fucking dark souls">
+	<li class="smilie">
+		<div class="text">:dealwithit:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-dealwithit.jpg" title="Don't be a drama queen">
+	<li class="smilie">
+		<div class="text">:dice:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/e/dice.001.gif" title="Battlefield more like Bugfilled!">
+	<li class="smilie">
+		<div class="text">:downsowned:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-downsowned.gif" title="Downs owned">
+	<li class="smilie">
+		<div class="text">:effort:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-effort.gif" title="Ugh, that button...">
+	<li class="smilie">
+		<div class="text">:feelsgood:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/1/feelsgood.001.png" title="Feels Good Man">
+	<li class="smilie">
+		<div class="text">:filez:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-filez.gif" title="FLIEZ">
+	<li class="smilie">
+		<div class="text">:firstpost:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-firstpost.gif" title="First Post">
+	<li class="smilie">
+		<div class="text">:frogon:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/e/frogon.001.png" title="please vacate the premises">
+	<li class="smilie">
+		<div class="text">:frogout:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-frogout.gif" title="a frog saying &quot;get out&quot;">
+	<li class="smilie">
+		<div class="text">:ftbrg:</div>
+		<img alt="" src="http://fi.somethingawful.com/customtitles/emot-ftbrg.gif" title="Fuck that butt real good">
+	<li class="smilie">
+		<div class="text">:gb2byob:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gb2byob.gif" title="go bakc 2 huuurrrrrr">
+	<li class="smilie">
+		<div class="text">:gb2fyad:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-gb2fyad.gif" title="Go back to FYAD">
+	<li class="smilie">
+		<div class="text">:gb2gbs:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-gb2gbs.gif" title="Go back to GBS">
+	<li class="smilie">
+		<div class="text">:gb2hd2k:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gb2hd2k.gif" title="Damn you, Helldump!">
+	<li class="smilie">
+		<div class="text">:getout:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-getout.png" title="GET OUT">
+	<li class="smilie">
+		<div class="text">:godwin:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-godwin.gif" title="Hitler Reference!">
+	<li class="smilie">
+		<div class="text">:goof:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-goof.gif" title="Get out of FYAD">
+	<li class="smilie">
+		<div class="text">:hurr:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hurr.gif" title="what does this do?">
+	<li class="smilie">
+		<div class="text">:iceburn:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-iceburn.gif" title="damn you just told son">
+	<li class="smilie">
+		<div class="text">:iia:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-iia.png" title="It it awesome!">
+	<li class="smilie">
+		<div class="text">:iiam:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-iiam.gif" title="Mysterious happenings!">
+	<li class="smilie">
+		<div class="text">:iiapa:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/5/iiapa.001.png" title="It is a poo analogy">
+	<li class="smilie">
+		<div class="text">:justpost:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/e/justpost.001.gif" title="Just fucking post it already!">
+	<li class="smilie">
+		<div class="text">:laffo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-laffo.gif" title="LAFFO">
+	<li class="smilie">
+		<div class="text">:lol:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-lol.gif" title="lolololerlerlslzollin'">
+	<li class="smilie">
+		<div class="text">:m10:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-m10.gif" title="it says mac-10, cool">
+	<li class="smilie">
+		<div class="text">:master:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-master.gif" title="masterstroke">
+	<li class="smilie">
+		<div class="text">:milkie:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/4/f/milkie.001.gif" title="da Moose is loose">
+	<li class="smilie">
+		<div class="text">:mitt:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/7/3/mitt.001.gif" title="Run pander.exe">
+	<li class="smilie">
+		<div class="text">:mordin:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-mordin.gif" title="A Scientist Salarian">
+	<li class="smilie">
+		<div class="text">:moreevil:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/f/moreevil.001.gif" title="evil for evil's sake">
+	<li class="smilie">
+		<div class="text">:ms:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ms.gif" title="Mystery Solved">
+	<li class="smilie">
+		<div class="text">:nattyburn:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-nattyburn.gif" title="NATTY ICE BURN fbgm">
+	<li class="smilie">
+		<div class="text">:nms:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-nms.gif" title="Not mind safe or worksafe">
+	<li class="smilie">
+		<div class="text">:nws:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-nws.gif" title="OMG SO NOT WORK SAFE">
+	<li class="smilie">
+		<div class="text">:owned:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-owned.gif" title="PWNED THE AS$ OF A N00B">
+	<li class="smilie">
+		<div class="text">:pedophiles:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/7/pedophiles.001.gif" title="But what about the pedos?!">
+	<li class="smilie">
+		<div class="text">:protarget:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-protarget.gif" title="Pro Target">
+	<li class="smilie">
+		<div class="text">:regd04:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-04.gif" title="Fucking 04's">
+	<li class="smilie">
+		<div class="text">:regd05:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-05.gif" title="05 baby!">
+	<li class="smilie">
+		<div class="text">:regd06:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-06.gif" title="06 HURR!">
+	<li class="smilie">
+		<div class="text">:regd07:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-07.gif" title="2007">
+	<li class="smilie">
+		<div class="text">:regd08:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-regd08.gif" title="into the ground!">
+	<li class="smilie">
+		<div class="text">:regd10:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-regd10.png" title="Holy Diver">
+	<li class="smilie">
+		<div class="text">:rms:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/c/e/rms.001.png" title="wget and emailed">
+	<li class="smilie">
+		<div class="text">:sbahj:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sbahj.gif" title="Shit got too reel for me.">
+	<li class="smilie">
+		<div class="text">:sicknasty:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sicknasty.gif" title="Space Bro Garrus">
+	<li class="smilie">
+		<div class="text">:speculate:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/c/a/speculate.001.gif" title="LOTS OF SPECULATION">
+	<li class="smilie">
+		<div class="text">:stoke:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/c/stoke.001.gif" title="Stoke Tactical Mastery">
+	<li class="smilie">
+		<div class="text">:tetten:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/c/tetten.001.gif" title="Tetten, the best thing ever">
+	<li class="smilie">
+		<div class="text">:their:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-their.gif" title="Grammer Queen Magnet">
+	<li class="smilie">
+		<div class="text">:vd:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-vd.gif" title="violetdragon">
+	<li class="smilie">
+		<div class="text">:w00t:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-w00t.gif" title="w00t">
+	<li class="smilie">
+		<div class="text">:w2byob:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-w2byob.gif" title="Welcome to BYOB!">
+	<li class="smilie">
+		<div class="text">:waycool:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-waycool.gif" title="Way Cool (this smilie is gay as hell)">
+	<li class="smilie">
+		<div class="text">:whoptc:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-whoptc.gif" title="whopkins">
+	<li class="smilie">
+		<div class="text">:wrongful:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-wrongful.gif" title="STFU">
+	<li class="smilie">
+		<div class="text">:wtc:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wtc.gif" title="#1 grandpa">
+	<li class="smilie">
+		<div class="text">:wtf:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-wtf.gif" title="wtf">
+	<li class="smilie">
+		<div class="text">:yohoho:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-yohoho.gif" title="SKULL JOKE!">
+</ul>
+
+<h3>Witty</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:anime:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-anime.png" title="Ego Orb">
+	<li class="smilie">
+		<div class="text">:aslol:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-aslol.gif" title="LOL for the deaf">
+	<li class="smilie">
+		<div class="text">:awesome:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-awesome.gif" title="uh its AWESOME">
+	<li class="smilie">
+		<div class="text">:baby:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-baby.png" title="Gotta love me">
+	<li class="smilie">
+		<div class="text">:backtowork:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-backtowork.gif" title="Responsibility Scallop">
+	<li class="smilie">
+		<div class="text">:barf:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-barf.gif" title="Look at that guy puke">
+	<li class="smilie">
+		<div class="text">:boonie:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-boonie.gif" title="David Boon">
+	<li class="smilie">
+		<div class="text">:bravo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bravo.gif" title="bravo">
+	<li class="smilie">
+		<div class="text">:buddy:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-buddy.gif" title="for realzzies">
+	<li class="smilie">
+		<div class="text">:byodame:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-byodame.gif" title="Worst emoticonette ever.">
+	<li class="smilie">
+		<div class="text">:byodood:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-byodood.gif" title="Worst emoticon ever">
+	<li class="smilie">
+		<div class="text">:c00l:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-c00l.gif" title="l33t li3k j3ff k">
+	<li class="smilie">
+		<div class="text">:c00lbert:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-c00lbert.gif" title="TAKE THAT MOTHERFUCKERS">
+	<li class="smilie">
+		<div class="text">:can:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-can.gif" title="You Opened a Can of Worms">
+	<li class="smilie">
+		<div class="text">:catstare:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/4/catstare.001.gif" title="I'm hitler IRL">
+	<li class="smilie">
+		<div class="text">:chord:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-chord.gif" title="pipe dog">
+	<li class="smilie">
+		<div class="text">:corsair:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-corsair.gif" title="Corsair is old.">
+	<li class="smilie">
+		<div class="text">:cripes:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/0/cripes.001.gif" title="Cripes">
+	<li class="smilie">
+		<div class="text">:crow:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-crow.gif" title="caw caw">
+	<li class="smilie">
+		<div class="text">:dawkins101:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-Dawkins102.gif" title="Pope Gives Up">
+	<li class="smilie">
+		<div class="text">:devilchild:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/7/devilchild.001.gif" title="Israel-Palestine Discussion">
+	<li class="smilie">
+		<div class="text">:dogout:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-dogout.gif" title="out with the frog">
+	<li class="smilie">
+		<div class="text">:douche:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/d/douche.001.gif" title="egg hating renegger. also douche">
+	<li class="smilie">
+		<div class="text">:downsbravo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-downsbravo.gif" title="Bravo">
+	<li class="smilie">
+		<div class="text">:downsrim:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-downsrim.gif" title="downs rimshot">
+	<li class="smilie">
+		<div class="text">:dukedog:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-dukedog.png" title="Duke Nukem is Forever">
+	<li class="smilie">
+		<div class="text">:faggot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-faggot.gif" title="Smug Jecht">
+	<li class="smilie">
+		<div class="text">:fella:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/f/fella.001.gif" title="TOO MANY LIMES! TOO MANY LIMES!">
+	<li class="smilie">
+		<div class="text">:fiesta:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fiesta.gif" title="fiesta gbs">
+	<li class="smilie">
+		<div class="text">:forkbomb:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/c/0/forkbomb.001.gif" title="hey there pretty lady">
+	<li class="smilie">
+		<div class="text">:frog:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-frog.gif" title="Frog Eyes">
+	<li class="smilie">
+		<div class="text">:frogbon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-frogbon.gif" title="R-r-r-ribbit?">
+	<li class="smilie">
+		<div class="text">:frogc00l:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-frogc00l.gif" title="cooler than being cool">
+	<li class="smilie">
+		<div class="text">:froggonk:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-froggonk.gif" title="Frog Gonk">
+	<li class="smilie">
+		<div class="text">:frogsiren:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-frogsiren.gif" title="Frogsiren">
+	<li class="smilie">
+		<div class="text">:fuckoff:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fuckoff.gif" title="Fuck off.">
+	<li class="smilie">
+		<div class="text">:fyadride:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fyadride.gif" title="Hello, fags. -TA">
+	<li class="smilie">
+		<div class="text">:gbsmith:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gbsmith.gif" title="a goon's life">
+	<li class="smilie">
+		<div class="text">:getin:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/0/getin.001.gif" title="get in not go out">
+	<li class="smilie">
+		<div class="text">:gifttank:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/f/gifttank.001.gif" title="Gifttank">
+	<li class="smilie">
+		<div class="text">:goatsecx:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-goatse.gif" title="Goatse.cx">
+	<li class="smilie">
+		<div class="text">:goonsay:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-goonsay.gif" title="goon says">
+	<li class="smilie">
+		<div class="text">:hampants:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hampants.gif" title="Pants of ham sing joyous!">
+	<li class="smilie">
+		<div class="text">:iamafag:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fuckyou.gif" title="Seriously I'm a big fucking faggot, look at me, I'm King Fag, and here's the smiley to prove it">
+	<li class="smilie">
+		<div class="text">:jiggled:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-jiggled.gif" title="jiggled again">
+	<li class="smilie">
+		<div class="text">:mmmsmug:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-mmmsmug.gif" title="holy fuck check out this">
+	<li class="smilie">
+		<div class="text">:mrapig:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/2/mrapig.001.png" title="The Pigman Cometh">
+	<li class="smilie">
+		<div class="text">:mump:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/b/mump.001.png" title="Mumptruck Mike">
+	<li class="smilie">
+		<div class="text">:parrot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-parrot.gif" title="That fucking bird">
+	<li class="smilie">
+		<div class="text">:psyboom:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-psyboom.gif" title="Psyduck head explosion">
+	<li class="smilie">
+		<div class="text">:pwm:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pwm.gif" title="PWM mascot">
+	<li class="smilie">
+		<div class="text">:pwn:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pwn.gif" title="fukken pwned nub">
+	<li class="smilie">
+		<div class="text">:qq:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-qq.gif" title="QQ">
+	<li class="smilie">
+		<div class="text">:qqsay:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-qqsay.gif" title="get rid of :confused:">
+	<li class="smilie">
+		<div class="text">:razz:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-razz.gif" title="ba ba ba baa im razzin it">
+	<li class="smilie">
+		<div class="text">:reddit:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/4/reddit.001.gif" title="Feeding on pedophile tears">
+	<li class="smilie">
+		<div class="text">:regd09:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-regd09.gif" title="regdog">
+	<li class="smilie">
+		<div class="text">:regd11:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/0/regd11.001.gif" title="Registry &amp; DLL sitting in a tree">
+	<li class="smilie">
+		<div class="text">:rodimus:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-rodimus.gif" title="Evil toy scalper w/child">
+	<li class="smilie">
+		<div class="text">:rubshands:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/rubshandstogetherandgrinsevilly.gif" title="rubshandstogetherandgrinsevilly">
+	<li class="smilie">
+		<div class="text">:shivdurf:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shivdurf.gif" title="Shivadas is king of byob.">
+	<li class="smilie">
+		<div class="text">:smith:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smith.gif" title="everyman smith">
+	<li class="smilie">
+		<div class="text">:smithfrog:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smithfrog.png" title="A sad old frog">
+	<li class="smilie">
+		<div class="text">:smithicide:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smithicide.gif" title="smith considering suicide">
+	<li class="smilie">
+		<div class="text">:smithmouth:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/7/smithmouth.001.gif" title="10/10/11 - never forgegg">
+	<li class="smilie">
+		<div class="text">:smug:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smug.gif" title="Smug">
+	<li class="smilie">
+		<div class="text">:smugbert:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugbert.gif" title="Smug Colbert">
+	<li class="smilie">
+		<div class="text">:smugdog:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugdog.gif" title="a smug dog">
+	<li class="smilie">
+		<div class="text">:smugissar:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugissar.gif" title="die you smug sonofabitch">
+	<li class="smilie">
+		<div class="text">:smugspike:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugspike.png" title="Spike Witwicky being smug">
+	<li class="smilie">
+		<div class="text">:staredog:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/4/6/staredog.001.gif" title="staredog">
+	<li class="smilie">
+		<div class="text">:stoat:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-stoat.gif" title="Stoat Box's Emotion">
+	<li class="smilie">
+		<div class="text">:suspense:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/6/d/suspense.001.gif" title="Absolutely riveting.">
+	<li class="smilie">
+		<div class="text">:sweep:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sweep.gif" title="Spring Cleaning">
+	<li class="smilie">
+		<div class="text">:synthy:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/synthy.gif" title="synthy's coffeebreak">
+	<li class="smilie">
+		<div class="text">:thejoke:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/e/thejoke.001.png" title="That's The Joke">
+	<li class="smilie">
+		<div class="text">:thumbsup:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-thumbsup.gif" title="hell yeah man">
+	<li class="smilie">
+		<div class="text">:ughh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ughh.gif" title="Picard Ughh">
+	<li class="smilie">
+		<div class="text">:unsmigghh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-unsmigghh.gif" title="unsmigghh">
+	<li class="smilie">
+		<div class="text">:unsmith:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-unsmith.gif" title="keep hope alive">
+	<li class="smilie">
+		<div class="text">:wotwot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wotwot.gif" title="it is a duck emoticon">
+</ul>
+
+<h3>Flags and other nationalist crap</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:911:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-911.gif" title="NEVER FORGET!">
+	<li class="smilie">
+		<div class="text">:anarchists:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/d/anarchists.001.gif" title="Crying Kropotkin, anarchist flag">
+	<li class="smilie">
+		<div class="text">:ancap:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/4/ancap.001.gif" title="anarcho-capitalism">
+	<li class="smilie">
+		<div class="text">:australia:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-australia.gif" title="Australia">
+	<li class="smilie">
+		<div class="text">:beck:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/0/beck.001.gif" title="tinfoil-chalkboard-smug">
+	<li class="smilie">
+		<div class="text">:belarus:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-belarus.gif" title="I don't know what the fuck this is or why somebody would buy it but hey, that's just me">
+	<li class="smilie">
+		<div class="text">:britain:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-britain.gif" title="Britain">
+	<li class="smilie">
+		<div class="text">:ca:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ca.gif" title="california :'(">
+	<li class="smilie">
+		<div class="text">:canada:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-canada.gif" title="Canada">
+	<li class="smilie">
+		<div class="text">:cheat:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/e/cheat.001.gif" title="And also there's the Cheat!">
+	<li class="smilie">
+		<div class="text">:china:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-china.gif" title="China">
+	<li class="smilie">
+		<div class="text">:denmark:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-denmark.gif" title="Denmark">
+	<li class="smilie">
+		<div class="text">:ese:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ese.gif" title="i cut you">
+	<li class="smilie">
+		<div class="text">:eurovision:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-eurovision.png" title="Eurovision">
+	<li class="smilie">
+		<div class="text">:france:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-france.gif" title="France">
+	<li class="smilie">
+		<div class="text">:fsmug:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fsmug.gif" title="smug with flag">
+	<li class="smilie">
+		<div class="text">:geert:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/2/geert.001.gif" title="Geert doe er wat aan!">
+	<li class="smilie">
+		<div class="text">:godwinning:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/f/godwinning.001.gif" title="Everything's coming up F&Atilde;&frac14;hrer">
+	<li class="smilie">
+		<div class="text">:helladid:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/3/helladid.001.gif" title="CreteLP Smilie">
+	<li class="smilie">
+		<div class="text">:hitler:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hitler.gif" title="Hitler">
+	<li class="smilie">
+		<div class="text">:italy:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-italy.gif" title="ital. flag with mussolini">
+	<li class="smilie">
+		<div class="text">:japan:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/e/japan.001.gif" title="Japan">
+	<li class="smilie">
+		<div class="text">:mexico:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-mexico.gif" title="Mexico">
+	<li class="smilie">
+		<div class="text">:norway:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-norway.gif" title="Norway/Norge/Noreg">
+	<li class="smilie">
+		<div class="text">:patriot:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-patriot.gif" title="Who the hell paid money for this stupid shit">
+	<li class="smilie">
+		<div class="text">:poland:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/8/poland.001.gif" title="polish joke">
+	<li class="smilie">
+		<div class="text">:quebec:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/d/quebec.001.gif" title="Francophone pride">
+	<li class="smilie">
+		<div class="text">:scotland:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-scotland.gif" title="Bonny Bonny Scotland">
+	<li class="smilie">
+		<div class="text">:spain:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-spain.gif" title="Bulls cry in Spain">
+	<li class="smilie">
+		<div class="text">:sweden:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sweden.gif" title="Sweden">
+	<li class="smilie">
+		<div class="text">:tf:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tf.gif" title="TF: 1/5/09: NEVER FORGET">
+	<li class="smilie">
+		<div class="text">:tito:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tito.gif" title="tito">
+	<li class="smilie">
+		<div class="text">:ussr:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-ussr.gif" title="USSR">
+	<li class="smilie">
+		<div class="text">:vuvu:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/6/8/vuvu.001.gif" title="South Africa">
+	<li class="smilie">
+		<div class="text">:woz:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/b/woz.001.gif" title="the Woz rules">
+	<li class="smilie">
+		<div class="text">:zpatriot:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/d/zpatriot.001.gif" title="Zombie Patriot">
+</ul>
+
+<h3>TV, Movies, Games, &amp; Comics</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:?:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-question.gif" title="Question box">
+	<li class="smilie">
+		<div class="text">:asoiaf:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/7/asoiaf.001.gif" title="hbo's game of thrones">
+	<li class="smilie">
+		<div class="text">:axe:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-axe.gif" title="Axe Maniac">
+	<li class="smilie">
+		<div class="text">:bsg:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bsg.gif" title="So say we all.">
+	<li class="smilie">
+		<div class="text">:bubblewoop:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bubblewoop.gif" title="Bubble Bobble">
+	<li class="smilie">
+		<div class="text">:c:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-c.png" title="poker club">
+	<li class="smilie">
+		<div class="text">:d:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-d.png" title="poker diamond">
+	<li class="smilie">
+		<div class="text">:doink:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-doink.gif" title="Doink">
+	<li class="smilie">
+		<div class="text">:doom:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-doom.gif" title="RRRRRICHARDS!">
+	<li class="smilie">
+		<div class="text">:dota101:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-dota101.gif" title="Playing DOTA 101">
+	<li class="smilie">
+		<div class="text">:flashfact:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-flashfact.gif" title="Flash fact">
+	<li class="smilie">
+		<div class="text">:flashfap:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-flashfap.gif" title="Flash loves the ladies">
+	<li class="smilie">
+		<div class="text">:foxnews:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-foxnews.gif" title="LOL Fox News LOL">
+	<li class="smilie">
+		<div class="text">:fry:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fry.gif" title="Fry saying &quot;Oh Snap!&quot;">
+	<li class="smilie">
+		<div class="text">:gaben:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/6/9/gaben.001.gif" title="Look at the money you're saving.">
+	<li class="smilie">
+		<div class="text">:golgo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-golgo.gif" title="Duke Togo Sniper">
+	<li class="smilie">
+		<div class="text">:h:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-h.png" title="poker heart">
+	<li class="smilie">
+		<div class="text">:itjb:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-itjb.gif" title="I'm the juggernaut bitch">
+	<li class="smilie">
+		<div class="text">:jp:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-jp.gif" title="John Phillipe">
+	<li class="smilie">
+		<div class="text">:kakashi:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-kakashi.gif" title="kakashi">
+	<li class="smilie">
+		<div class="text">:kratos:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-kratos.gif" title="I AM THE GOD OF WAR">
+	<li class="smilie">
+		<div class="text">:laugh:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-laugh.gif" title="Laugh">
+	<li class="smilie">
+		<div class="text">:legion:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/a/legion.001.gif" title="Consensus: Death by Gunshot">
+	<li class="smilie">
+		<div class="text">:liara:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/9/liara.001.gif" title="This takes me back...">
+	<li class="smilie">
+		<div class="text">:lost:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-lost.gif" title="LOST">
+	<li class="smilie">
+		<div class="text">:lovewcc:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-lovewcc.gif" title="We love Companion Cubes">
+	<li class="smilie">
+		<div class="text">:lron:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-lron.gif" title="Pyarmid cult Hypno">
+	<li class="smilie">
+		<div class="text">:mario:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-mario.gif" title="Mario">
+	<li class="smilie">
+		<div class="text">:mcnabb:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-mcnabb.png" title="Happy Donovan">
+	<li class="smilie">
+		<div class="text">:megaman:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-megaman.gif" title="Megaman">
+	<li class="smilie">
+		<div class="text">:nixon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-nixon.gif" title="Nixon's back!">
+	<li class="smilie">
+		<div class="text">:nolan:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-nolan.gif" title="Let's Talk Batman Guys">
+	<li class="smilie">
+		<div class="text">:nyan:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/e/nyan.001.gif" title="nyan cat">
+	<li class="smilie">
+		<div class="text">:orks:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-orks.gif" title="DAKKA DAKKA DAKKA">
+	<li class="smilie">
+		<div class="text">:pcgaming1:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pcgaming1.gif" title="PC Gaming Filez Frog">
+	<li class="smilie">
+		<div class="text">:pcgaming:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pcgaming.gif" title="HOLY SHIT PC GAMING!">
+	<li class="smilie">
+		<div class="text">:psydwarf:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/5/psydwarf.001.png" title="Dwarves are maddeningly stupid.">
+	<li class="smilie">
+		<div class="text">:punto:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-punto.gif" title="buntbuntbunt">
+	<li class="smilie">
+		<div class="text">:qfg:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-qfg.gif" title="QFG Hero Dance">
+	<li class="smilie">
+		<div class="text">:quagmire:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-quagmire.gif" title="Quagmire">
+	<li class="smilie">
+		<div class="text">:ramsay:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ramsay.gif" title="Gordon Ramsay">
+	<li class="smilie">
+		<div class="text">:retrogames:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/4/a/retrogames.001.gif" title="Retro Gooning (Spending Money)">
+	<li class="smilie">
+		<div class="text">:riot:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/d/riot.001.gif" title="Best online technical">
+	<li class="smilie">
+		<div class="text">:rolldice:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/1/rolldice.001.gif" title="totally having fun">
+	<li class="smilie">
+		<div class="text">:s:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-s.png" title="poker spade">
+	<li class="smilie">
+		<div class="text">:sg:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sg.gif" title="Shyguy">
+	<li class="smilie">
+		<div class="text">:shepface:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shepface.gif" title="Sexing aliens, you say?">
+	<li class="smilie">
+		<div class="text">:shepicide:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/2/shepicide.001.gif" title="I have no idea...">
+	<li class="smilie">
+		<div class="text">:smaug:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/9/smaug.001.gif" title="Smaug Smug">
+	<li class="smilie">
+		<div class="text">:spidey:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-spidey.gif" title="My Spidey Sense is tingling">
+	<li class="smilie">
+		<div class="text">:stat:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-stat.gif" title="Statler">
+	<li class="smilie">
+		<div class="text">:steam:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/e/steam.001.gif" title="Steam">
+	<li class="smilie">
+		<div class="text">:tali:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/1/tali.001.gif" title="Incoming sperg in 5...4...">
+	<li class="smilie">
+		<div class="text">:todd:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-todd.gif" title="Plagiarism ahoy!">
+	<li class="smilie">
+		<div class="text">:turianass:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-turianass.gif" title="Turian Airqoute">
+	<li class="smilie">
+		<div class="text">:tviv:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tviv.gif" title="Shit just got real on TV">
+	<li class="smilie">
+		<div class="text">:tvtropes:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/4/d/tvtropes.001.gif" title="Unironic boob charts everyday">
+	<li class="smilie">
+		<div class="text">:twentyfour:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-twentyfour.gif" title="24 icon for TVIV">
+	<li class="smilie">
+		<div class="text">:wal:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wal.gif" title="Waldorf">
+	<li class="smilie">
+		<div class="text">:wcc:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wcc.gif" title="Weighted Compion Cube">
+	<li class="smilie">
+		<div class="text">:wcw:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wcw.gif" title="Vince makes Sting cry">
+	<li class="smilie">
+		<div class="text">:wookie:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-wookie.gif" title="Chewbacca">
+	<li class="smilie">
+		<div class="text">:xcom:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/a/xcom.001.gif" title="baby">
+	<li class="smilie">
+		<div class="text">:yoshi:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-yoshi.gif" title="Yoshi">
+	<li class="smilie">
+		<div class="text">:zaeed:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/6/7/zaeed.001.gif" title="Guddamn terrorists I said.">
+	<li class="smilie">
+		<div class="text">:zoid:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-zoid.gif" title="Zoidberg">
+</ul>
+
+<h3>Horrible &amp; retarded shit we can't wait to delete</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:11tea:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-11tea.gif" title="11:00 drink tea every day">
+	<li class="smilie">
+		<div class="text">:a2m:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-a2m.gif" title="Ass to Mouth">
+	<li class="smilie">
+		<div class="text">:am:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-am.gif" title="Atomic Monkey">
+	<li class="smilie">
+		<div class="text">:awesomelon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-awesomelon.gif" title="Awesome Cylon">
+	<li class="smilie">
+		<div class="text">:bahgawd:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bahgawd.gif" title="Bah Gawd King!">
+	<li class="smilie">
+		<div class="text">:bandwagon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bandwagon.gif" title="All Aboard the Bandwagon">
+	<li class="smilie">
+		<div class="text">:bick:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bick.gif" title="aw shit its your boy bick">
+	<li class="smilie">
+		<div class="text">:bigtran:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bigtran.gif" title="Bigtran!">
+	<li class="smilie">
+		<div class="text">:biotruths:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/0/biotruths.001.gif" title="because berries">
+	<li class="smilie">
+		<div class="text">:btroll:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-buttertroll.gif" title="Butter Troll">
+	<li class="smilie">
+		<div class="text">:burger:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-burger.gif" title="have a burger">
+	<li class="smilie">
+		<div class="text">:bustem:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-bustem.png" title="Chris Costa's Bust'em">
+	<li class="smilie">
+		<div class="text">:byobear:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-byobear.gif" title="Trashcanbear XP SP2">
+	<li class="smilie">
+		<div class="text">:c00lbutt:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-c00lbutt.gif" title="a star is born">
+	<li class="smilie">
+		<div class="text">:camera6:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-camera6.gif" title="Worst Case Scenario">
+	<li class="smilie">
+		<div class="text">:ccb:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ccb.gif" title="clown balloon cock">
+	<li class="smilie">
+		<div class="text">:cedric:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/4/cedric.001.png" title="Graham, watch out!">
+	<li class="smilie">
+		<div class="text">:cenobite:</div>
+		<img alt="" src="http://fi.somethingawful.com/customtitles/emot-chatter.gif" title="We have eternity to know your flesh">
+	<li class="smilie">
+		<div class="text">:chiefsay:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/c/chiefsay.001.gif" title="Earned them Khaki's">
+	<li class="smilie">
+		<div class="text">:chiyo:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-chio.gif" title="Some creepy ADTRW thing">
+	<li class="smilie">
+		<div class="text">:circlefap:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-circlefap.gif" title="Circle Fap">
+	<li class="smilie">
+		<div class="text">:coal:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-coal.gif" title="coal">
+	<li class="smilie">
+		<div class="text">:confuoot:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/d/confuoot.001.gif" title="why am i tooting">
+	<li class="smilie">
+		<div class="text">:coolfish:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-coolfish.gif" title="coolfish">
+	<li class="smilie">
+		<div class="text">:derp:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-derp.gif" title="deepa derpa doo">
+	<li class="smilie">
+		<div class="text">:derptiel:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/b/derptiel.001.gif" title="aka downsparrot">
+	<li class="smilie">
+		<div class="text">:dong:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-dong.gif" title="Dongs">
+	<li class="smilie">
+		<div class="text">:drum:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-drum.gif" title="Get a move on">
+	<li class="smilie">
+		<div class="text">:ducksiren:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/3/ducksiren.001.gif" title="Half the duck, all the sass.">
+	<li class="smilie">
+		<div class="text">:edi:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/b/edi.001.gif" title="That is a joke.">
+	<li class="smilie">
+		<div class="text">:emoticon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-emoticon.gif" title="Hey guys, adbot's cool!">
+	<li class="smilie">
+		<div class="text">:evil:</div>
+		<img alt="" src="http://fi.somethingawful.com/customtitles/evol-anim.gif" title="It's catching on!">
+	<li class="smilie">
+		<div class="text">:fireman:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fireman.gif" title="Not worth dying for">
+	<li class="smilie">
+		<div class="text">:flaccid:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-flaccid.gif" title="This never happens to me">
+	<li class="smilie">
+		<div class="text">:flag:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-flag.gif" title="Penalty flag">
+	<li class="smilie">
+		<div class="text">:fork:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-fork.png" title="Fork">
+	<li class="smilie">
+		<div class="text">:frogdowns:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-frogdowns.png" title="Downs Frog">
+	<li class="smilie">
+		<div class="text">:fsn:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-fsn.gif" title="Tribute to LP">
+	<li class="smilie">
+		<div class="text">:furcry:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-furcry.gif" title="Fursecution is a myth">
+	<li class="smilie">
+		<div class="text">:fut:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/c/fut.001.gif" title="Fuck you TROLLS!">
+	<li class="smilie">
+		<div class="text">:FYH:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-FYH.gif" title="Fuck You Hannah">
+	<li class="smilie">
+		<div class="text">:george:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-george.gif" title="Gorgeous George">
+	<li class="smilie">
+		<div class="text">:gizz:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gizz.gif" title="Gizz">
+	<li class="smilie">
+		<div class="text">:goleft:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-goleft.gif" title="this ones for microwave">
+	<li class="smilie">
+		<div class="text">:gonchar:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gonchar.gif" title="he looks like a puffy cow">
+	<li class="smilie">
+		<div class="text">:google:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-google.gif" title="Google">
+	<li class="smilie">
+		<div class="text">:goon:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-goon.gif" title="This smilie is gay as hell but oh well">
+	<li class="smilie">
+		<div class="text">:goonboot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-goonboot.gif" title="March of the GoonBoots">
+	<li class="smilie">
+		<div class="text">:gooncamp:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gooncamp.gif" title="gooncamp">
+	<li class="smilie">
+		<div class="text">:gtfoycs:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gtfoycs.gif" title="Get the fuck out of YCS">
+	<li class="smilie">
+		<div class="text">:guitar:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-guitar.gif" title="Jammin'">
+	<li class="smilie">
+		<div class="text">:gurf:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-gurf.gif" title="gurf">
+	<li class="smilie">
+		<div class="text">:happyelf:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-happyelf.gif" title="Warning: Israel-Palestine">
+	<li class="smilie">
+		<div class="text">:havlat:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-havlat.gif" title="Martin Havlat for Jesus">
+	<li class="smilie">
+		<div class="text">:hb:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hb.gif" title="Henrich Von Bastard">
+	<li class="smilie">
+		<div class="text">:hchatter:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hchatter.gif" title="Welcome to FYAD, we fucken loooooove to drink">
+	<li class="smilie">
+		<div class="text">:hellyeah:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hellyeah.gif" title="hell yeah">
+	<li class="smilie">
+		<div class="text">:holymoley:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-holymoley.gif" title="Holy Moley!">
+	<li class="smilie">
+		<div class="text">:horse:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-horse.gif" title="horse gif A+ barbaro RIP">
+	<li class="smilie">
+		<div class="text">:hr:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-hr.gif" title="Haibane Renmei">
+	<li class="smilie">
+		<div class="text">:iiaca:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-iiaca.gif" title="It is a car analogy">
+	<li class="smilie">
+		<div class="text">:ironicat:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ironicat.gif" title="It's an ironic cat">
+	<li class="smilie">
+		<div class="text">:irony:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-irony.gif" title="Irony Meter">
+	<li class="smilie">
+		<div class="text">:iw:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/d/iw.001.gif" title="Infinity Ward Robert Bowling">
+	<li class="smilie">
+		<div class="text">:jeb:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/b/jeb.001.gif" title="Jeb Kerman: Thrillmaster">
+	<li class="smilie">
+		<div class="text">:joel:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-joel.gif" title="It's Joel de Bunchastu">
+	<li class="smilie">
+		<div class="text">:kamina:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-kamina.gif" title="KYODAI GATTAI!">
+	<li class="smilie">
+		<div class="text">:kiddo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-kiddo.gif" title="Innocent youth">
+	<li class="smilie">
+		<div class="text">:killdozer:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-killdozer.gif" title="legends never die">
+	<li class="smilie">
+		<div class="text">:krad:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-krad2.gif" title="Kickin' Rad (Oldschool)">
+	<li class="smilie">
+		<div class="text">:krakken:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-kraken.gif" title="The Krakken">
+	<li class="smilie">
+		<div class="text">:love:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-love.gif" title="Love heart">
+	<li class="smilie">
+		<div class="text">:madmax:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-madmax.gif" title="Mad Max">
+	<li class="smilie">
+		<div class="text">:manning:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/3/manning.001.gif" title="Santana Moss and Jabar Gaffney?">
+	<li class="smilie">
+		<div class="text">:mason:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-mason.gif" title="Masonic">
+	<li class="smilie">
+		<div class="text">:milk:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-milk.gif" title="YOU DUMBASS!">
+	<li class="smilie">
+		<div class="text">:monar:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-monar.gif" title="MONAR?!?!">
+	<li class="smilie">
+		<div class="text">:moustache:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-moustache.gif" title="It is a moustache">
+	<li class="smilie">
+		<div class="text">:mufasa:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-mufasa.png" title="Mufasa">
+	<li class="smilie">
+		<div class="text">:negative:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/negativeman-55f.png" title="NegativeMan">
+	<li class="smilie">
+		<div class="text">:notfunny:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-notfunny.gif" title="DocEvil">
+	<li class="smilie">
+		<div class="text">:nyoron:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-nyoron.gif" title="smoked cheese">
+	<li class="smilie">
+		<div class="text">:objection:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-objection.gif" title="That was.. objectionable!">
+	<li class="smilie">
+		<div class="text">:ovr:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/c/e/ovr.001.gif" title="YOSPOS, BITCH">
+	<li class="smilie">
+		<div class="text">:page3:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-page3.gif" title="page 3 conspiracy">
+	<li class="smilie">
+		<div class="text">:phone:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-phone.gif" title="i wanna talk to my daddy">
+	<li class="smilie">
+		<div class="text">:phoneb:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-phoneb.gif" title="hello have a nice day">
+	<li class="smilie">
+		<div class="text">:phoneline:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-phoneline.gif" title="Reach out &amp; touch someone">
+	<li class="smilie">
+		<div class="text">:pipe:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pipe.gif" title="Sophistication!">
+	<li class="smilie">
+		<div class="text">:pluto:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pluto.gif" title="Still a planet to us">
+	<li class="smilie">
+		<div class="text">:pranke:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-pranke.gif" title="Prankeapple">
+	<li class="smilie">
+		<div class="text">:psyberger:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-psyberger.gif" title="AAAAAAAAAAGGGG">
+	<li class="smilie">
+		<div class="text">:psyduck:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-psyduck.gif" title="Psy-yi-yi">
+	<li class="smilie">
+		<div class="text">:psylon:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-psylon.gif" title="This fracking show!">
+	<li class="smilie">
+		<div class="text">:psypop:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-psypop.gif" title="PSY EXPLOSION">
+	<li class="smilie">
+		<div class="text">:pt:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-onlyoption.gif" title="Only option">
+	<li class="smilie">
+		<div class="text">:q:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-q.gif" title="Q">
+	<li class="smilie">
+		<div class="text">:qirex:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-qirex.gif" title="Qirex">
+	<li class="smilie">
+		<div class="text">:ranbowdash:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/7/e/ranbowdash.001.png" title="It's gonna be SO Awesome!">
+	<li class="smilie">
+		<div class="text">:redhammer:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-redhammer.gif" title="The Red Hammer (another waste of money)">
+	<li class="smilie">
+		<div class="text">:rice:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-rice.gif" title="Ricer">
+	<li class="smilie">
+		<div class="text">:riker:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-riker.gif" title="Riker leads the away team">
+	<li class="smilie">
+		<div class="text">:rudebox:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-rudebox.gif" title="Shake ya Rudebox!">
+	<li class="smilie">
+		<div class="text">:russbus:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-russbus.gif" title="the russ buss">
+	<li class="smilie">
+		<div class="text">:sax:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-sax.gif" title="Something so monumentally lame that I can't even comprehend it">
+	<li class="smilie">
+		<div class="text">:sharpton:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-sharpton.gif" title="Reverend Alfred 'Al' Sharpton">
+	<li class="smilie">
+		<div class="text">:shibaz:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shibaz.png" title="shibaz 101">
+	<li class="smilie">
+		<div class="text">:shopkeeper:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shopkeeper.gif" title="Hello THIEF!">
+	<li class="smilie">
+		<div class="text">:signings:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-signings.gif" title="Psynings">
+	<li class="smilie">
+		<div class="text">:sissies:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sissies.gif" title="D&amp;D at it's best">
+	<li class="smilie">
+		<div class="text">:slick:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-slick.gif" title="You gotta">
+	<li class="smilie">
+		<div class="text">:smugbird:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugbird.gif" title="Smug Orioles Bird">
+	<li class="smilie">
+		<div class="text">:smugdroid:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/9/smugdroid.001.png" title="the definition of open">
+	<li class="smilie">
+		<div class="text">:smugndar:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugndar.gif" title="larasndar">
+	<li class="smilie">
+		<div class="text">:smugteddie:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-smugteddie.gif" title="Teddie from Persona 4">
+	<li class="smilie">
+		<div class="text">:snoop:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-snoop.gif" title="snoop.gif">
+	<li class="smilie">
+		<div class="text">:solanadumb:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-solanadumb.png" title="are u a bark bark">
+	<li class="smilie">
+		<div class="text">:sonia:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sonia.gif" title="Sonia from DPPH">
+	<li class="smilie">
+		<div class="text">:sotw:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-sotw.gif" title="Smilie of the Week">
+	<li class="smilie">
+		<div class="text">:spergin:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-spergin.png" title="Asperger Syndrome">
+	<li class="smilie">
+		<div class="text">:spooky:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-spooky.gif" title="Spooky">
+	<li class="smilie">
+		<div class="text">:stalker:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-stalker.gif" title="creepy stalker thing">
+	<li class="smilie">
+		<div class="text">:sugartits:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/c/sugartits.001.png" title="Censored">
+	<li class="smilie">
+		<div class="text">:synpa:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-synpa.gif" title="first post on page 2!!!!">
+	<li class="smilie">
+		<div class="text">:syoon:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/2/syoon.001.gif" title="Syo Swooning">
+	<li class="smilie">
+		<div class="text">:taco:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-taco.gif" title="Taco">
+	<li class="smilie">
+		<div class="text">:tastykake:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/c/tastykake.001.gif" title="PHILLY WHAT">
+	<li class="smilie">
+		<div class="text">:tbear:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-trashbear.gif" title="Trashbear">
+	<li class="smilie">
+		<div class="text">:techno:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-techno.gif" title="technobabble">
+	<li class="smilie">
+		<div class="text">:thurman:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-thurman.gif" title="Thurman football dude">
+	<li class="smilie">
+		<div class="text">:toughguy:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-toughguy.gif" title="Internet Tough Guy">
+	<li class="smilie">
+		<div class="text">:toxx:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-toxx.gif" title="Toxx Clause">
+	<li class="smilie">
+		<div class="text">:troll:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/f/troll.001.png" title="Are you mad?">
+	<li class="smilie">
+		<div class="text">:tubular:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-tubular.gif" title="Tubular, Dude.">
+	<li class="smilie">
+		<div class="text">:uhaul:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-uhaul.gif" title="Uhaul for leaving TFR">
+	<li class="smilie">
+		<div class="text">:vick:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-vick.gif" title="kicks a touchdown">
+	<li class="smilie">
+		<div class="text">:viconia:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-viconia.gif" title="bad moon rising">
+	<li class="smilie">
+		<div class="text">:viggo:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-viggo.gif" title="Smug scholar">
+	<li class="smilie">
+		<div class="text">:whatup:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-whatup.gif" title="sup">
+	<li class="smilie">
+		<div class="text">:wink:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wink.gif" title="wink">
+	<li class="smilie">
+		<div class="text">:wmwink:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wmwink.png" title="The mouth to wink">
+	<li class="smilie">
+		<div class="text">:wom:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wom.gif" title="WOM WOM WOM WOM">
+	<li class="smilie">
+		<div class="text">:woof:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-woof.gif" title="God Woof! Woof! is a Fag">
+	<li class="smilie">
+		<div class="text">:wooper:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-wooper.gif" title="woopaaaah woopaaaaah">
+	<li class="smilie">
+		<div class="text">:xie:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-xie.gif" title="Yanks postseason troubles">
+	<li class="smilie">
+		<div class="text">:yosbutt:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/8/yosbutt.001.gif" title="i drop jorts+shake my neg ass @u">
+	<li class="smilie">
+		<div class="text">:zerg:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-zerg.gif" title="ZERG RUSH!!!">
+</ul>
+
+<h3>Hey everybody I'm on drugs!</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:2bong:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-2bong.png" title="TWO BONGS AT ONCE">
+	<li class="smilie">
+		<div class="text">:350:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-350.gif" title="shivadas">
+	<li class="smilie">
+		<div class="text">:420:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-weed.gif" title="Some horrible drug thing!">
+	<li class="smilie">
+		<div class="text">:catdrugs:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-catdrugs.gif" title="CAT DRUGS">
+	<li class="smilie">
+		<div class="text">:chillpill:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/2/chillpill.001.gif" title="Chill your pill dude">
+	<li class="smilie">
+		<div class="text">:dominic:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-dominic.gif" title="repurchase Dominic">
+	<li class="smilie">
+		<div class="text">:drugnerd:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-drugnerd.gif" title="Good nerds got the hookup">
+	<li class="smilie">
+		<div class="text">:lsd:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-lsd.gif" title="Ingestion of LSD">
+	<li class="smilie">
+		<div class="text">:obama:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-obama.gif" title="Obama is 44th">
+	<li class="smilie">
+		<div class="text">:okpos:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/b/okpos.001.gif" title="stare with a bong">
+	<li class="smilie">
+		<div class="text">:rory:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/rainbow.gif" title="rainbow">
+	<li class="smilie">
+		<div class="text">:shroom:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-shroom.gif" title="Flashing Mushroom">
+	<li class="smilie">
+		<div class="text">:tinsley:</div>
+		<img alt="" src="http://fi.somethingawful.com/customtitles/eris/classic_fillmore.gif" title="Glug glug glug, time to write a strip">
+	<li class="smilie">
+		<div class="text">:weed:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-weed.gif" title="A ball of weed">
+</ul>
+
+<h3>New / Uncategorized</h3>
+<ul class="smilie_group">
+	<li class="smilie">
+		<div class="text">:agesilaus:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/7/2/agesilaus.001.png" title="Smug about Sparta">
+	<li class="smilie">
+		<div class="text">:anasta:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/d/anasta.001.jpg" title="Braith Anasta's head">
+	<li class="smilie">
+		<div class="text">:catbert:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/3/catbert.001.gif" title="Catstare. Bert.">
+	<li class="smilie">
+		<div class="text">:corrupt:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/e/corrupt.001.gif" title="what's wrong?">
+	<li class="smilie">
+		<div class="text">:cult:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/2/cult.001.jpg" title="wearepedostate">
+	<li class="smilie">
+		<div class="text">:effortless:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/1/effortless.001.gif" title="For effortposts.">
+	<li class="smilie">
+		<div class="text">:freep:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/e/freep.001.gif" title="All the worst parts of the Right">
+	<li class="smilie">
+		<div class="text">:gas:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/b/gas.001.gif" title="A cloud of gas.">
+	<li class="smilie">
+		<div class="text">:gerty:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/4/gerty.001.png" title="Helping you is what I do, Sam">
+	<li class="smilie">
+		<div class="text">:gogtears:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/a/gogtears.001.gif" title="Good Old Games Sales">
+	<li class="smilie">
+		<div class="text">:gop:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/2/gop.001.gif" title="GOP">
+	<li class="smilie">
+		<div class="text">:gowron:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/4/gowron.001.gif" title="gowron">
+	<li class="smilie">
+		<div class="text">:guinness:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/0/guinness.001.gif" title="Drink up!">
+	<li class="smilie">
+		<div class="text">:hirez:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/7/hirez.001.gif" title="hirez  game studios">
+	<li class="smilie">
+		<div class="text">:homebrew:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/c/homebrew.001.gif" title="Throwing money in air">
+	<li class="smilie">
+		<div class="text">:ins:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/1/5/ins.001.gif" title="Insert">
+	<li class="smilie">
+		<div class="text">:itwaspoo:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/6/f/itwaspoo.001.gif" title="Fine Australian Journalism">
+	<li class="smilie">
+		<div class="text">:jebstare:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/1/jebstare.001.png" title="Something has gone wrong.">
+	<li class="smilie">
+		<div class="text">:krakentoot:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/f/krakentoot.001.gif" title="Beat like a red headed stepchild">
+	<li class="smilie">
+		<div class="text">:lurkmore:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/d/lurkmore.001.gif" title="Lurk more before posting!">
+	<li class="smilie">
+		<div class="text">:magical:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/c/magical.001.png" title="This is just MAGICAL">
+	<li class="smilie">
+		<div class="text">:mensch:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/e/mensch.001.gif" title="Iraqi Information Minister">
+	<li class="smilie">
+		<div class="text">:mil101:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/9/mil101.001.gif" title="Goddam civilians don't know shit">
+	<li class="smilie">
+		<div class="text">:moments:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/5/3/moments.001.gif" title="Wake up, Thanny...">
+	<li class="smilie">
+		<div class="text">:mrgw2:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/1/mrgw2.001.png" title="Mr Green Water 2">
+	<li class="smilie">
+		<div class="text">:mrgw:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/6/mrgw.001.png" title="Mister Green Water">
+	<li class="smilie">
+		<div class="text">:newt:</div>
+		<img alt="" src="http://fi.somethingawful.com/images/smilies/emot-newt.png" title="Smug Newt (Gingrich)">
+	<li class="smilie">
+		<div class="text">:notch:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/e/1/notch.001.png" title="Notch of Minecraft fame">
+	<li class="smilie">
+		<div class="text">:ocelot:</div>
+		<img alt="" src="http://i.somethingawful.com/forumsystem/emoticons/emot-ocelot.gif" title="You're pretty good!">
+	<li class="smilie">
+		<div class="text">:orks101:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/e/orks101.001.gif" title="Green is best">
+	<li class="smilie">
+		<div class="text">:patssay:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/c/8/patssay.001.gif" title="Average Patriots fan">
+	<li class="smilie">
+		<div class="text">:pgi:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/2/pgi.001.gif" title="Cause PGI!">
+	<li class="smilie">
+		<div class="text">:radcat:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/0/radcat.001.png" title="oh no oh no i am a rad cat">
+	<li class="smilie">
+		<div class="text">:rip:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/2/rip.001.gif" title="rip">
+	<li class="smilie">
+		<div class="text">:rms2:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/2/rms2.001.png" title="Free as in Freedom">
+	<li class="smilie">
+		<div class="text">:russo:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/e/russo.001.gif" title="Vince Russo">
+	<li class="smilie">
+		<div class="text">:shepspends:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/c/shepspends.001.gif" title="I just gotta have one!">
+	<li class="smilie">
+		<div class="text">:shibewow:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/5/shibewow.001.gif" title="so text">
+	<li class="smilie">
+		<div class="text">:shrek:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/0/shrek.001.gif" title="peanut butta nigga">
+	<li class="smilie">
+		<div class="text">:smithcloud:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/8/9/smithcloud.001.gif" title="iCloud icon with :smith:">
+	<li class="smilie">
+		<div class="text">:smugwizard:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/2/b/smugwizard.001.png" title="Smug Wizard">
+	<li class="smilie">
+		<div class="text">:soe:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/1/soe.001.gif" title="SOE">
+	<li class="smilie">
+		<div class="text">:sparkles:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/7/d/sparkles.001.gif" title="A V face sparkling like an idiot">
+	<li class="smilie">
+		<div class="text">:sterv:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/3/sterv.001.gif" title="Oblivion.gif">
+	<li class="smilie">
+		<div class="text">:stonkhat:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/9/stonkhat.001.gif" title=":stonkhat:">
+	<li class="smilie">
+		<div class="text">:stonklol:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/7/stonklol.001.gif" title="Disturbamusing.">
+	<li class="smilie">
+		<div class="text">:tfrxmas:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/6/tfrxmas.001.gif" title="self explanatory">
+	<li class="smilie">
+		<div class="text">:thx:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/3/thx.001.gif" title="bwaaaaa-eeeeeerrrrrrrrrrrrrrr">
+	<li class="smilie">
+		<div class="text">:tootzzz:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/d/7/tootzzz.001.png" title="Sleepy time">
+	<li class="smilie">
+		<div class="text">:torgue:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/9/3/torgue.001.gif" title="Mr Torgue. EXPLOSIONS!">
+	<li class="smilie">
+		<div class="text">:valvebeta:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/6/3/valvebeta.001.png" title="Valve beta cards">
+	<li class="smilie">
+		<div class="text">:wiggle:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/3/3/wiggle.001.gif" title="doin the wily">
+	<li class="smilie">
+		<div class="text">:wow:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/b/0/wow.001.gif" title="Wolf Blitzer">
+	<li class="smilie">
+		<div class="text">:xbone:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/f/0/xbone.001.gif" title="Xbone!">
+	<li class="smilie">
+		<div class="text">:yayclod:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/0/7/yayclod.001.png" title="Some kind of happy cloud thing">
+	<li class="smilie">
+		<div class="text">:yaycloud:</div>
+		<img alt="" src="http://fi.somethingawful.com/safs/smilies/a/4/yaycloud.001.gif" title="The cloud touches us everywhere">
+</ul>
+
+
+
+	<br style="clear:both;">
+	<br>
+	If you want to disable smilies in a post that you make,
+	you can select the 'Disable Smilies' option when posting.
+	This is particularly useful if you are posting program code and you do not want <b>;)</b> converted to a smilie face!
+	</div>
+</div>
+
+</div><!-- #content -->
+	<ul class="navigation">
+<li class="first"><a href="/index.php">SA Forums</a></li>
+<li>- <a href="http://www.somethingawful.com/">Something Awful</a></li>
+<li>- <a href="/f/search">Search the Forums</a></li>
+<li>- <a href="/usercp.php">User Control Panel</a></li>
+<li>- <a href="/private.php">Private Messages</a></li>
+<li>- <a href="http://www.somethingawful.com/d/forum-rules/forum-rules.php">Forum Rules</a></li>
+<li>- <a href="/dictionary.php">SAclopedia</a></li>
+<li>- <a href="/stats.php">Posting Gloryhole</a></li>
+<li>- <a href="/banlist.php">Leper's Colony</a></li>
+<li>- <a href="/supportmail.php">Support</a></li>
+
+<li>- <a href="/account.php?action=loginform&amp;next=%2Fmisc.php%3Faction%3Dshowsmilies#form">*** LOG IN ***</a></li>
+</ul>
+	<div id="copyright">
+		Powered by: vBulletin Version 2.2.9 (<a href="/CHANGES">SAVB-v2.1.17</a>)<br>
+		Copyright &copy;2000, 2001, Jelsoft Enterprises Limited.<br>
+		Copyright &copy;2012, Something Awful LLC<br>
+	</div>
+
+</div><!-- #container -->
+
+<script type="text/javascript">
+	// quantcast
+	_qoptions = { qacct:"p-82vTvmw-enlng" };
+
+	try {
+		if(document.location.hostname != 'forums.somethingawful.com')
+			throw undefined;
+
+		$(document).ready(function() {
+			var qcUrl = 'http://edge.quantserve.com/quant.js';
+			jQuery.getScript(qcUrl);
+
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			var gaUrl = gaJsHost + 'google-analytics.com/ga.js';
+			jQuery.getScript(gaUrl, function() {
+				var pageTracker = _gat._getTracker("UA-3064978-2");
+				pageTracker._initData();
+				pageTracker._trackPageview();
+			});
+		});
+	} catch(e) {};
+
+	// indie
+	// try {
+	// 	if(document.location.hostname != 'forums.somethingawful.com')
+	// 		throw undefined;
+
+	// 	$(document).ready(function() {
+	// 		var ic_element = document.createElement('script');
+	// 		ic_element.type = 'text/javascript';
+	// 		ic_element.async = true;
+	// 		ic_element.id = 'ic_annonymous_pixel';
+	// 		ic_element.src = 'http://pixel.indieclick.com/annonymous/domain/somethingawful.com/reach/script_ic.js';
+	// 		var ic_script = document.getElementsByTagName('script')[0];
+	// 		ic_script.parentNode.insertBefore(ic_element, ic_script);
+	// 	});
+	// } catch(e) {};
+</script>
+<noscript><img src="http://pixel.quantserve.com/pixel/p-82vTvmw-enlng.gif" style="display:none;" border="0" height="1" width="1" alt="Quantcast"></noscript>
+
+<!-- PLEASE DO NOT REMOVE -->
+<ol id="debug" style="display:none"><li>&nbsp;</ol>
+
+</body>
+</html>
