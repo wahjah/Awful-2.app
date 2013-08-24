@@ -50,6 +50,13 @@
                                                 page:(NSInteger)page
                                    completionHandler:(void (^)(NSError *error, NSArray *posts))completionHandler;
 
+/**
+ * Fetches smilies.
+ *
+ * @return The started `NSURLSessionDataTask` for fetching smilies.
+ */
+- (NSURLSessionDataTask *)fetchSmilies:(void (^)(NSError *error, NSArray *smilies))completionHandler;
+
 @end
 
 /**

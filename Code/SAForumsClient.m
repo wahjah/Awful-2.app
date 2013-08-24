@@ -121,6 +121,51 @@
     }];
 }
 
+- (NSURLSessionDataTask *)fetchSmilies:(void (^)(NSError *error, NSArray *smilies))completionHandler
+{
+    return [self.HTTPClient GET:@"misc.php"
+                     parameters:@{ @"action": @"showsmilies" }
+                        success:^(NSHTTPURLResponse *response, HTMLDocument *document)
+            {
+                NSMutableArray *smilies = [NSMutableArray new];
+                for (HTMLElementNode *element in document.treeEnumerator) {
+                    if (![element isKindOfClass:[HTMLElementNode class]]) {
+                        continue;
+                    }
+                    if (![element.tagName isEqualToString:@"li"]) {
+                        continue;
+                    }
+                    HTMLAttribute *classAttribute;
+                    for (HTMLAttribute *attribute in element.attributes) {
+                        if ([attribute.name isEqualToString:@"class"]) {
+                            classAttribute = attribute;
+                            break;
+                        }
+                    }
+                    if (![classAttribute.value hasPrefix:@"smilie"]) {
+                        continue;
+                    }
+                    NSMutableAttributedString *text = [NSMutableAttributedString new];
+                    for (HTMLTextNode *textNode in element.treeEnumerator) {
+                        if ([textNode isKindOfClass:[HTMLTextNode class]]) {
+                            // for some reason there are a bunch of whitespace nodes
+                            if (!([textNode.data rangeOfString:@":"].location == NSNotFound)) {
+                            [text.mutableString appendString:textNode.data];
+                            }
+                        }
+                    }
+                    [smilies addObject:text];
+                }
+                if (completionHandler) {
+                    completionHandler(nil, smilies);
+                }
+            } failure:^(NSError *error) {
+                if (completionHandler) {
+                    completionHandler(error, nil);
+                }
+            }];
+}
+
 - (AFHTTPClient *)HTTPClient
 {
     if (_HTTPClient) return _HTTPClient;
