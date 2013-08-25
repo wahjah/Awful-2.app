@@ -7,7 +7,7 @@
 
 #import "SAForumsClient.h"
 #import <AFNetworking/AFNetworking.h>
-#import <HTMLReader/HTMLDocument.h>
+#import <HTMLReader/HTMLReader.h>
 #import "SAHTMLSerializer.h"
 
 @interface SAHTTPClient : AFHTTPClient
@@ -86,25 +86,9 @@
                         success:^(NSHTTPURLResponse *response, HTMLDocument *document)
     {
         NSMutableArray *posts = [NSMutableArray new];
-        for (HTMLElementNode *element in document.treeEnumerator) {
-            if (![element isKindOfClass:[HTMLElementNode class]]) {
-                continue;
-            }
-            if (![element.tagName isEqualToString:@"table"]) {
-                continue;
-            }
-            HTMLAttribute *classAttribute;
-            for (HTMLAttribute *attribute in element.attributes) {
-                if ([attribute.name isEqualToString:@"class"]) {
-                    classAttribute = attribute;
-                    break;
-                }
-            }
-            if (![classAttribute.value hasPrefix:@"post"]) {
-                continue;
-            }
+        for (HTMLElementNode *table in [document nodesMatchingSelector:@"table.post"]) {
             NSMutableAttributedString *post = [NSMutableAttributedString new];
-            for (HTMLTextNode *textNode in element.treeEnumerator) {
+            for (HTMLTextNode *textNode in table.treeEnumerator) {
                 if ([textNode isKindOfClass:[HTMLTextNode class]]) {
                     [post.mutableString appendString:textNode.data];
                 }

@@ -6,7 +6,7 @@
 //
 
 #import "SAHTMLSerializer.h"
-#import <HTMLReader/HTMLParser.h>
+#import <HTMLReader/HTMLReader.h>
 
 @implementation SAHTMLSerializer
 
@@ -26,7 +26,7 @@
                           error:(NSError *__autoreleasing *)error
 {
     NSString *string = [[NSString alloc] initWithData:data encoding:NSWindowsCP1252StringEncoding];
-    return [[HTMLParser alloc] initWithString:string].document;
+    return [HTMLDocument documentWithString:string];
 }
 
 @end

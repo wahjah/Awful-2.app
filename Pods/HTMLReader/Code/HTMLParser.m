@@ -6,6 +6,7 @@
 //
 
 #import "HTMLParser.h"
+#import "HTMLMutability.h"
 #import "HTMLString.h"
 #import "HTMLTokenizer.h"
 
@@ -124,12 +125,27 @@ static inline NSString * NSStringFromHTMLInsertionMode(HTMLInsertionMode mode)
     BOOL _fragmentParsingAlgorithm;
 }
 
++ (HTMLDocument *)documentForString:(NSString *)string
+{
+	return [[self parserForString:string] document];
+}
+
++ (instancetype)parserForString:(NSString *)string
+{
+	return [[self alloc] initWithString:string];
+}
+
 - (id)initWithString:(NSString *)string
 {
     if (!(self = [self init])) return nil;
     _tokenizer = [[HTMLTokenizer alloc] initWithString:string];
     _tokenizer.parser = self;
     return self;
+}
+
++ (instancetype)parserForString:(NSString *)string context:(HTMLElementNode *)context
+{
+	return [[self alloc] initWithString:string context:context];
 }
 
 - (id)initWithString:(NSString *)string context:(HTMLElementNode *)context
