@@ -22,14 +22,14 @@
 
 @implementation SAThreadViewController
 
-- (id)initWithThreadID:(NSString *)threadID
+- (id)initWithThread:(SAThread *)thread
 {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-        _threadID = [threadID copy];
+        _thread = thread;
     }
     return self;
 }
@@ -40,16 +40,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.collectionView registerClass:[SAPostColletionViewCell class] forCellWithReuseIdentifier:@"Post"];
     __weak __typeof__(self) weakSelf = self;
-    [[SAForumsClient client] fetchPostsFromThreadWithID:self.threadID
-                                                   page:1
-                                      completionHandler:^(NSError *error, NSArray *posts)
-     {
-         __typeof__(self) strongSelf = weakSelf;
-         strongSelf.posts = posts;
-         if ([strongSelf isViewLoaded]) {
-             [strongSelf.collectionView reloadData];
-         }
-     }];
+    [self.thread postsOnPage:1 completionHandler:^(NSError *error, NSArray *posts) {
+        __typeof__(self) strongSelf = weakSelf;
+        strongSelf.posts = posts;
+        if ([strongSelf isViewLoaded]) {
+            [strongSelf.collectionView reloadData];
+        }
+    }];
 }
 
 #pragma mark UICollectionViewDataSource and UICollectionViewDelegate
@@ -64,8 +61,8 @@
 {
     SAPostColletionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Post"
                                                                               forIndexPath:indexPath];
-    NSAttributedString *post = self.posts[indexPath.item];
-    cell.textView.attributedText = post;
+    SAPost *post = self.posts[indexPath.item];
+    cell.textView.attributedText = [[NSAttributedString alloc] initWithString:post.HTMLContents];
     return cell;
 }
 
@@ -73,10 +70,11 @@
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSAttributedString *post = self.posts[indexPath.item];
-    CGRect textBounds = [post boundingRectWithSize:CGSizeMake(CGRectGetWidth(collectionView.frame), 0)
-                                           options:NSStringDrawingUsesLineFragmentOrigin
-                                           context:nil];
+    SAPost *post = self.posts[indexPath.item];
+    NSAttributedString *string = [[NSAttributedString alloc] initWithString:post.HTMLContents];
+    CGRect textBounds = [string boundingRectWithSize:CGSizeMake(CGRectGetWidth(collectionView.frame), 0)
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                             context:nil];
     return CGSizeMake(CGRectGetWidth(collectionView.frame), CGRectGetHeight(textBounds));
 }
 

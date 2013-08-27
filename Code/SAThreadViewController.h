@@ -6,11 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SAModels.h"
 
 @interface SAThreadViewController : UICollectionViewController
 
-- (id)initWithThreadID:(NSString *)threadID;
+- (id)initWithThread:(SAThread *)thread;
 
-@property (readonly, copy, nonatomic) NSString *threadID;
+@property (readonly, strong, nonatomic) SAThread *thread;
 
 @end

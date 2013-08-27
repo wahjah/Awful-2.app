@@ -7,7 +7,6 @@
 
 #import "SAForumsClient.h"
 #import <AFNetworking/AFNetworking.h>
-#import <HTMLReader/HTMLReader.h>
 #import "SAHTMLSerializer.h"
 
 @interface SAHTTPClient : AFHTTPClient
@@ -77,7 +76,7 @@
 
 - (NSURLSessionDataTask *)fetchPostsFromThreadWithID:(NSString *)threadID
                                                 page:(NSInteger)page
-                                   completionHandler:(void (^)(NSError *error, NSArray *posts))completionHandler
+                                   completionHandler:(void (^)(NSError *error, HTMLDocument *document))completionHandler
 {
     return [self.HTTPClient GET:@"showthread.php"
                      parameters:@{ @"threadid": threadID,
@@ -85,18 +84,8 @@
                                    @"perpage": @40 }
                         success:^(NSHTTPURLResponse *response, HTMLDocument *document)
     {
-        NSMutableArray *posts = [NSMutableArray new];
-        for (HTMLElementNode *table in [document nodesMatchingSelector:@"table.post"]) {
-            NSMutableAttributedString *post = [NSMutableAttributedString new];
-            for (HTMLTextNode *textNode in table.treeEnumerator) {
-                if ([textNode isKindOfClass:[HTMLTextNode class]]) {
-                    [post.mutableString appendString:textNode.data];
-                }
-            }
-            [posts addObject:post];
-        }
         if (completionHandler) {
-            completionHandler(nil, posts);
+            completionHandler(nil, document);
         }
     } failure:^(NSError *error) {
         if (completionHandler) {

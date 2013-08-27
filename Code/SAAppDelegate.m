@@ -31,7 +31,9 @@
         viewController.view.backgroundColor = [UIColor whiteColor];
         [viewControllers addObject:viewController];
     }
-    SAThreadViewController *awfulThread = [[SAThreadViewController alloc] initWithThreadID:@"3564303"];
+    SAThread *awfulProjectLog = [SAThread new];
+    awfulProjectLog.threadID = @"3564303";
+    SAThreadViewController *awfulThread = [[SAThreadViewController alloc] initWithThread:awfulProjectLog];
     awfulThread.title = @"Awful's Thread";
     [viewControllers addObject:awfulThread];
     for (NSUInteger i = 0; i < viewControllers.count; i++) {
