@@ -73,7 +73,7 @@
     }
 }
 
--(NSArray *)childElementNodes
+- (NSArray *)childElementNodes
 {
 	NSMutableArray *ret = [NSMutableArray arrayWithCapacity:_childNodes.count];
 	
@@ -93,7 +93,7 @@
     return [[HTMLTreeEnumerator alloc] initWithNode:self reversed:NO];
 }
 
--(NSEnumerator *)reversedTreeEnumerator
+- (NSEnumerator *)reversedTreeEnumerator
 {
 	return [[HTMLTreeEnumerator alloc] initWithNode:self reversed:YES];
 }
@@ -122,6 +122,17 @@
 - (id)objectForKeyedSubscript:(__unused NSString *)key
 {
     // Implemented so we can subscript HTMLNode instances, even though only HTMLElementNode instances have attributes.
+    return nil;
+}
+
+- (NSString *)innerHTML
+{
+    return [[self.childNodes valueForKey:@"serializedFragment"] componentsJoinedByString:@""];
+}
+
+- (NSString *)serializedFragment
+{
+    [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
@@ -188,6 +199,43 @@
     return [self attributeNamed:key].value;
 }
 
+- (NSString *)serializedFragment
+{
+    NSMutableString *string = [NSMutableString stringWithFormat:@"<%@", self.tagName];
+    for (HTMLAttribute *attribute in self.attributes) {
+        NSString *serializedName = attribute.name;
+        if ([attribute isKindOfClass:[HTMLNamespacedAttribute class]]) {
+            HTMLNamespacedAttribute *namespacedAttribute = (HTMLNamespacedAttribute *)attribute;
+            if (!([namespacedAttribute.prefix isEqualToString:@"xmlns"] &&
+                  [namespacedAttribute.name isEqualToString:@"xmlns"])) {
+                serializedName = [NSString stringWithFormat:@"%@:%@",
+                                  namespacedAttribute.prefix, namespacedAttribute.name];
+            }
+        }
+        NSString *escapedValue = [attribute.value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+        escapedValue = [escapedValue stringByReplacingOccurrencesOfString:@"\u00A0" withString:@"&nbsp;"];
+        escapedValue = [escapedValue stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
+        [string appendFormat:@" %@=\"%@\"", serializedName, escapedValue];
+    }
+    [string appendString:@">"];
+    if ([@[ @"area", @"base", @"basefont", @"bgsound", @"br", @"col", @"embed", @"frame", @"hr", @"img", @"input",
+            @"keygen", @"link", @"menuitem", @"meta", @"param", @"source", @"track", @"wbr"
+            ] containsObject:self.tagName]) {
+        return string;
+    }
+    if ([@[ @"pre", @"textarea", @"listing" ] containsObject:self.tagName]) {
+        if (self.childNodes.count > 0 && [self.childNodes[0] isKindOfClass:[HTMLTextNode class]]) {
+            HTMLTextNode *textNode = self.childNodes[0];
+            if ([textNode.data hasPrefix:@"\n"]) {
+                [string appendString:@"\n"];
+            }
+        }
+    }
+    [string appendString:self.innerHTML];
+    [string appendFormat:@"</%@>", self.tagName];
+    return string;
+}
+
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone
@@ -249,6 +297,24 @@
     return [_data copy];
 }
 
+- (NSString *)serializedFragment
+{
+    NSString *parentTagName;
+    if ([self.parentNode isKindOfClass:[HTMLElementNode class]]) {
+        parentTagName = ((HTMLElementNode *)self.parentNode).tagName;
+    }
+    if ([@[ @"style", @"script", @"xmp", @"iframe", @"noembed", @"noframes", @"plaintext", @"noscript"
+            ] containsObject:parentTagName]) {
+        return self.data;
+    } else {
+        NSString *escaped = [self.data stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+        escaped = [escaped stringByReplacingOccurrencesOfString:@"\u00A0" withString:@"&nbsp;"];
+        escaped = [escaped stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+        escaped = [escaped stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+        return escaped;
+    }
+}
+
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone
@@ -278,6 +344,11 @@
     if (!(self = [super init])) return nil;
     _data = [data copy];
     return self;
+}
+
+- (NSString *)serializedFragment
+{
+    return [NSString stringWithFormat:@"<!--%@-->", self.data];
 }
 
 #pragma mark NSCopying
@@ -316,6 +387,11 @@
 - (id)init
 {
     return [self initWithName:nil publicId:nil systemId:nil];
+}
+
+- (NSString *)serializedFragment
+{
+    return [NSString stringWithFormat:@"<!DOCTYPE %@>", self.name];
 }
 
 #pragma mark NSCopying
