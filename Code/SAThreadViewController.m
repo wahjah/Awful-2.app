@@ -62,20 +62,25 @@
     SAPostColletionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Post"
                                                                               forIndexPath:indexPath];
     SAPost *post = self.posts[indexPath.item];
-    cell.textView.attributedText = [[NSAttributedString alloc] initWithString:post.HTMLContents];
+    cell.textView.attributedText = post.stringContents;
     return cell;
 }
+
+static const UIEdgeInsets TextViewInsets = (UIEdgeInsets){ .left = 5, .right = 5 };
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SAPost *post = self.posts[indexPath.item];
-    NSAttributedString *string = [[NSAttributedString alloc] initWithString:post.HTMLContents];
-    CGRect textBounds = [string boundingRectWithSize:CGSizeMake(CGRectGetWidth(collectionView.frame), 0)
-                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                             context:nil];
-    return CGSizeMake(CGRectGetWidth(collectionView.frame), CGRectGetHeight(textBounds));
+    CGFloat textViewWidth = CGRectGetWidth(UIEdgeInsetsInsetRect(collectionView.frame, TextViewInsets));
+    CGRect textBounds = [post.stringContents boundingRectWithSize:CGSizeMake(textViewWidth, 0)
+                                                          options:(NSStringDrawingUsesLineFragmentOrigin |
+                                                                   NSStringDrawingUsesFontLeading)
+                                                          context:nil];
+    
+    // Without the `+ 1` the last line is typically cut off when the UITextView renders. Worth further investigation, but this works for now.
+    return CGSizeMake(CGRectGetWidth(collectionView.frame), ceilf(CGRectGetHeight(textBounds)) + 1);
 }
 
 @end
@@ -90,11 +95,17 @@
         _textView.translatesAutoresizingMaskIntoConstraints = NO;
         _textView.editable = NO;
         _textView.scrollEnabled = NO;
+        
+        // We'll do our own padding.
+        _textView.textContainerInset = UIEdgeInsetsZero;
+        _textView.textContainer.lineFragmentPadding = 0;
+        
         [self.contentView addSubview:_textView];
         NSDictionary *views = @{ @"textView": _textView };
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textView]|"
+        NSDictionary *metrics = @{ @"left": @(TextViewInsets.left), @"right": @(TextViewInsets.right) };
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[textView]-right-|"
                                                                                  options:0
-                                                                                 metrics:nil
+                                                                                 metrics:metrics
                                                                                    views:views]];
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textView]|"
                                                                                  options:0
