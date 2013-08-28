@@ -28,7 +28,7 @@
 /**
  * The post's author.
  */
-@property (weak, nonatomic) SAUser *author;
+@property (strong, nonatomic) SAUser *author;
 
 /**
  * The post's contents as HTML.
