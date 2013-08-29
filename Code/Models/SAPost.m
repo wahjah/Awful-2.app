@@ -31,11 +31,11 @@
     NSMutableAttributedString *stringContents = [contentsNode.sa_innerAttributedString mutableCopy];
     
     // NSRegularExpressionSearch is not documented to work for any of NSMutableString's methods.
-    [stringContents.mutableString replaceOccurrencesOfString:@"[\t\r ]+"
+    [stringContents.mutableString replaceOccurrencesOfString:@" +"
                                                   withString:@" "
                                                      options:NSRegularExpressionSearch
                                                        range:NSMakeRange(0, stringContents.length)];
-    [stringContents.mutableString replaceOccurrencesOfString:@"[\t ]?\n[\t ]?"
+    [stringContents.mutableString replaceOccurrencesOfString:@" ?\n ?"
                                                   withString:@"\n"
                                                      options:NSRegularExpressionSearch
                                                        range:NSMakeRange(0, stringContents.length)];
@@ -79,29 +79,39 @@
             [string appendAttributedString:childStringContents];
         }
     }
-    if ([self.tagName isEqualToString:@"li"]) {
-        [string.mutableString insertString:@"• " atIndex:0];
-    }
-    else if ([self.tagName isEqualToString:@"br"]) {
-        [string.mutableString appendString:@"\n"];
-    }
-    
-    if ([self.tagName isEqualToString:@"b"]) {
-        [string addAttribute:NSFontAttributeName
-                       value:BodyFontWithSymbolicTraits(UIFontDescriptorTraitBold)
-                       range:NSMakeRange(0, string.length)];
-    }
-    else if ([self.tagName isEqualToString:@"i"]) {
-        [string addAttribute:NSFontAttributeName
-                       value:BodyFontWithSymbolicTraits(UIFontDescriptorTraitItalic)
-                       range:NSMakeRange(0, string.length)];
-    }
     
     if ([self.tagName isEqualToString:@"a"]) {
         NSURL *base = [NSURL URLWithString:@"http://forums.somethingawful.com/"];
         NSURL *url = [NSURL URLWithString:self[@"href"] relativeToURL:base];
         [string addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, string.length)];
     }
+    else if ([self.tagName isEqualToString:@"b"]) {
+        [string addAttribute:NSFontAttributeName
+                       value:BodyFontWithSymbolicTraits(UIFontDescriptorTraitBold)
+                       range:NSMakeRange(0, string.length)];
+    }
+    else if ([self.tagName isEqualToString:@"br"]) {
+        [string.mutableString appendString:@"\n"];
+    }
+    else if ([self.tagName isEqualToString:@"i"]) {
+        [string addAttribute:NSFontAttributeName
+                       value:BodyFontWithSymbolicTraits(UIFontDescriptorTraitItalic)
+                       range:NSMakeRange(0, string.length)];
+    }
+    else if ([self.tagName isEqualToString:@"li"]) {
+        [string.mutableString insertString:@"•\t" atIndex:0];
+        NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+        CGSize bulletSpaceSize = [@"•N" sizeWithAttributes:@{ NSFontAttributeName: BodyFontWithSymbolicTraits(0) }];
+        CGFloat indent = ceilf(bulletSpaceSize.width);
+        
+        // No idea why this tab stop won't line up with the headIndent. For now, a trial-and-errored `- 5`.
+        style.tabStops = @[ [[NSTextTab alloc] initWithTextAlignment:NSTextAlignmentNatural
+                                                            location:indent - 5
+                                                             options:nil] ];
+        style.headIndent = indent;
+        [string addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, string.length)];
+    }
+    
     return string;
 }
 
@@ -119,8 +129,11 @@ static UIFont * BodyFontWithSymbolicTraits(UIFontDescriptorSymbolicTraits traits
 
 - (NSAttributedString *)sa_innerAttributedString
 {
-    // Replace each newline here with a space so that element nodes (like <br>) can insert newlines with impunity.
-    NSString *data = [self.data stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+    // Replace each newline or here with a space so that element nodes (like <br>) can insert newlines or tabs with impunity.
+    NSString *data = [self.data stringByReplacingOccurrencesOfString:@"[\n\t]"
+                                                          withString:@" "
+                                                             options:NSRegularExpressionSearch
+                                                               range:NSMakeRange(0, self.data.length)];
     return [[NSAttributedString alloc] initWithString:data];
 }
 
