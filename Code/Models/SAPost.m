@@ -6,7 +6,7 @@
 //
 
 #import "SAModels.h"
-#import <HTMLReader/HTMLReader.h>
+#import <HTMLReader/HTMLParser.h>
 
 @interface HTMLNode (SAPost)
 
@@ -16,20 +16,16 @@
 
 @implementation SAPost
 
-+ (instancetype)postWithHTMLTableElement:(HTMLElementNode *)table
+- (NSAttributedString *)stringContents
 {
-    SAPost *post = [self new];
-    post.postID = [table[@"id"] substringFromIndex:4];
-    SAUser *author = [SAUser new];
-    author.username = [[table firstNodeMatchingSelector:@"dt.author"] innerHTML];
-    post.author = author;
-    HTMLElementNode *contentsNode = [table firstNodeMatchingSelector:@"td.postbody"];
-    post.HTMLContents = contentsNode.innerHTML;
+    NSMutableAttributedString *stringContents = [NSMutableAttributedString new];
+    NSArray *nodes = [HTMLParser parserForString:self.HTMLContents context:nil].document.childNodes;
+    for (HTMLNode *node in nodes) {
+        [stringContents appendAttributedString:node.sa_innerAttributedString];
+    }
     
     // Approximately process whitespace according to CSS 2.1 spec.
     // http://www.w3.org/TR/CSS2/text.html#white-space-model
-    NSMutableAttributedString *stringContents = [contentsNode.sa_innerAttributedString mutableCopy];
-    
     // NSRegularExpressionSearch is not documented to work for any of NSMutableString's methods.
     [stringContents.mutableString replaceOccurrencesOfString:@" +"
                                                   withString:@" "
@@ -46,14 +42,25 @@
                                inRange:NSMakeRange(0, stringContents.length)
                                options:0
                             usingBlock:^(id value, NSRange range, BOOL *stop)
-    {
-        if (!value) {
-            [stringContents addAttribute:NSFontAttributeName
-                                   value:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]
-                                   range:range];
-        }
-    }];
-    post.stringContents = stringContents;
+     {
+         if (!value) {
+             [stringContents addAttribute:NSFontAttributeName
+                                    value:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]
+                                    range:range];
+         }
+     }];
+    return stringContents;
+}
+
++ (instancetype)postWithHTMLTableElement:(HTMLElementNode *)table
+{
+    SAPost *post = [self new];
+    post.postID = [table[@"id"] substringFromIndex:4];
+    SAUser *author = [SAUser new];
+    author.username = [[table firstNodeMatchingSelector:@"dt.author"] innerHTML];
+    post.author = author;
+    HTMLElementNode *contentsNode = [table firstNodeMatchingSelector:@"td.postbody"];
+    post.HTMLContents = contentsNode.innerHTML;
     return post;
 }
 

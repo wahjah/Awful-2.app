@@ -38,7 +38,7 @@
 /**
  * The post's contents as an attributed string.
  */
-@property (copy, nonatomic) NSAttributedString *stringContents;
+- (NSAttributedString *)stringContents;
 
 /**
  * The date the post was made.

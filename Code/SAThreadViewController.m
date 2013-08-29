@@ -67,6 +67,20 @@
     }];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dynamicTextSettingsDidChange:)
+                                                 name:UIContentSizeCategoryDidChangeNotification
+                                               object:nil];
+}
+
+- (void)dynamicTextSettingsDidChange:(NSNotification *)note
+{
+    [self.collectionView reloadData];
+}
+
 #pragma mark UICollectionViewDataSource and UICollectionViewDelegateFlowLayout
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
