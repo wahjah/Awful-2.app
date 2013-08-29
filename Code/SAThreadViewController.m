@@ -37,7 +37,7 @@
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0);
     layout.headerReferenceSize = CGSizeMake(0, 54);
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
@@ -117,15 +117,13 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SAPost *post = self.posts[indexPath.section];
-    UIEdgeInsets sectionInset = ((UICollectionViewFlowLayout *)collectionViewLayout).sectionInset;
-    CGFloat itemWidth = CGRectGetWidth(UIEdgeInsetsInsetRect(collectionView.frame, sectionInset));
-    CGRect textBounds = [post.stringContents boundingRectWithSize:CGSizeMake(itemWidth, 0)
-                                                          options:(NSStringDrawingUsesLineFragmentOrigin |
-                                                                   NSStringDrawingUsesFontLeading)
-                                                          context:nil];
-    
-    // Without the `+ 1` the last line is typically cut off when the UITextView renders. Worth further investigation, but this works for now.
-    return CGSizeMake(itemWidth, ceilf(CGRectGetHeight(textBounds)) + 1);
+    CGFloat itemWidth = CGRectGetWidth(collectionView.frame);
+    NSLayoutManager *layoutManager = [NSLayoutManager new];
+    [layoutManager addTextContainer:[[NSTextContainer alloc] initWithSize:CGSizeMake(itemWidth, CGFLOAT_MAX)]];
+    NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:post.stringContents];
+    [storage addLayoutManager:layoutManager];
+    CGRect boundingRect = [layoutManager usedRectForTextContainer:layoutManager.textContainers[0]];
+    return CGSizeMake(itemWidth, CGRectGetHeight(boundingRect));
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
@@ -174,11 +172,7 @@ referenceSizeForFooterInSection:(NSInteger)section
         _textView.translatesAutoresizingMaskIntoConstraints = NO;
         _textView.editable = NO;
         _textView.scrollEnabled = NO;
-        
-        // We'll do our own padding.
         _textView.textContainerInset = UIEdgeInsetsZero;
-        _textView.textContainer.lineFragmentPadding = 0;
-        
         [self.contentView addSubview:_textView];
         NSDictionary *views = @{ @"textView": _textView };
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textView]|"
