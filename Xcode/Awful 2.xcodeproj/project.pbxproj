@@ -147,8 +147,8 @@
 		1CFBD7A217B6B4A300D8CA66 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				1C0C053F17CC67600089F501 /* Models */,
 				1CFBD7A317B6B4A300D8CA66 /* main.m */,
+				1C0C053F17CC67600089F501 /* Models */,
 				1CFBD7A417B6B4A300D8CA66 /* Prefix.pch */,
 				1CFDEF0417B6B85F0076EC8D /* QuietAssertMacros.c */,
 				1CFBD7A517B6B4A300D8CA66 /* SAAppDelegate.h */,
