@@ -7,6 +7,7 @@
 
 #import "SAThreadViewController.h"
 #import "SAForumsClient.h"
+#import "SAPost+Rendering.h"
 #import "SAPostTextView.h"
 
 @interface SAPostHeaderView : UICollectionReusableView

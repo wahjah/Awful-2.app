@@ -36,11 +36,6 @@
 @property (copy, nonatomic) NSString *HTMLContents;
 
 /**
- * The post's contents as an attributed string.
- */
-- (NSAttributedString *)stringContents;
-
-/**
  * The date the post was made.
  */
 @property (strong, nonatomic) NSDate *postDate;
