@@ -7,6 +7,7 @@
 
 #import "SAModels.h"
 #import <HTMLReader/HTMLParser.h>
+#import "SAPostLayoutManager.h"
 
 @interface HTMLNode (SAPost)
 
@@ -98,6 +99,23 @@
                        range:NSMakeRange(0, string.length)];
     }
     else if ([self.tagName isEqualToString:@"br"]) {
+        [string.mutableString appendString:@"\n"];
+    }
+    else if ([self.tagName isEqualToString:@"div"]) {
+        NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        if ([[self[@"class"] componentsSeparatedByCharactersInSet:whitespace] containsObject:@"bbc-block"]) {
+            NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+            style.firstLineHeadIndent = 20;
+            style.headIndent = 20;
+            [string addAttributes:@{ NSParagraphStyleAttributeName: style,
+                                     SALeftBarAttributeName: @YES }
+                            range:NSMakeRange(0, string.length)];
+        }
+    }
+    else if ([self.tagName isEqualToString:@"h4"]) {
+        [string addAttribute:NSFontAttributeName
+                       value:BodyFontWithSymbolicTraits(UIFontDescriptorTraitBold)
+                       range:NSMakeRange(0, string.length)];
         [string.mutableString appendString:@"\n"];
     }
     else if ([self.tagName isEqualToString:@"i"]) {

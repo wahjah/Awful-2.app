@@ -7,6 +7,7 @@
 
 #import "SAThreadViewController.h"
 #import "SAForumsClient.h"
+#import "SAPostLayoutManager.h"
 
 @interface SAPostHeaderView : UICollectionReusableView
 
@@ -174,6 +175,12 @@ referenceSizeForFooterInSection:(NSInteger)section
 
 @end
 
+@interface SAPostColletionViewCell ()
+
+@property (strong, nonatomic) NSTextStorage *textStorage;
+
+@end
+
 @implementation SAPostColletionViewCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -182,7 +189,13 @@ referenceSizeForFooterInSection:(NSInteger)section
     if (self) {
         self.contentView.backgroundColor = [UIColor whiteColor];
         
-        _textView = [[UITextView alloc] initWithFrame:(CGRect){ .size = frame.size }];
+        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(0, CGFLOAT_MAX)];
+        textContainer.widthTracksTextView = YES;
+        SAPostLayoutManager *layoutManager = [SAPostLayoutManager new];
+        [layoutManager addTextContainer:textContainer];
+        _textStorage = [NSTextStorage new];
+        [_textStorage addLayoutManager:layoutManager];
+        _textView = [[UITextView alloc] initWithFrame:(CGRect){ .size = frame.size } textContainer:textContainer];
         _textView.translatesAutoresizingMaskIntoConstraints = NO;
         _textView.editable = NO;
         _textView.scrollEnabled = NO;

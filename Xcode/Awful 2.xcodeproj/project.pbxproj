@@ -19,6 +19,7 @@
 		1CB61D1A17B9F5A700EE9653 /* SASidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D1917B9F5A700EE9653 /* SASidebarViewController.m */; };
 		1CB61D1D17B9F7C300EE9653 /* SABasementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D1C17B9F7C300EE9653 /* SABasementItem.m */; };
 		1CB61D2317BB38BF00EE9653 /* SAThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB61D2217BB38BF00EE9653 /* SAThreadViewController.m */; };
+		1CCE51F917D04430004E9B5A /* SAPostLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE51F817D04430004E9B5A /* SAPostLayoutManager.m */; };
 		1CF4583E17CC6B66000F64B5 /* SAForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4583D17CC6B66000F64B5 /* SAForum.m */; };
 		1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A317B6B4A300D8CA66 /* main.m */; };
 		1CFBD7A817B6B4A300D8CA66 /* SAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBD7A617B6B4A300D8CA66 /* SAAppDelegate.m */; };
@@ -55,6 +56,8 @@
 		1CB61D1C17B9F7C300EE9653 /* SABasementItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABasementItem.m; sourceTree = "<group>"; };
 		1CB61D2117BB38BF00EE9653 /* SAThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAThreadViewController.h; sourceTree = "<group>"; };
 		1CB61D2217BB38BF00EE9653 /* SAThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAThreadViewController.m; sourceTree = "<group>"; };
+		1CCE51F717D04430004E9B5A /* SAPostLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPostLayoutManager.h; sourceTree = "<group>"; };
+		1CCE51F817D04430004E9B5A /* SAPostLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPostLayoutManager.m; sourceTree = "<group>"; };
 		1CF4583C17CC6B66000F64B5 /* SAForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAForum.h; sourceTree = "<group>"; };
 		1CF4583D17CC6B66000F64B5 /* SAForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAForum.m; sourceTree = "<group>"; };
 		1CFBD7A317B6B4A300D8CA66 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +133,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1CCE51F617D043F9004E9B5A /* Thread View */ = {
+			isa = PBXGroup;
+			children = (
+				1CCE51F717D04430004E9B5A /* SAPostLayoutManager.h */,
+				1CCE51F817D04430004E9B5A /* SAPostLayoutManager.m */,
+				1CB61D2117BB38BF00EE9653 /* SAThreadViewController.h */,
+				1CB61D2217BB38BF00EE9653 /* SAThreadViewController.m */,
+			);
+			path = "Thread View";
+			sourceTree = "<group>";
+		};
 		1CFBD7A217B6B4A300D8CA66 /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,8 +165,7 @@
 				1CB31FC017B751BF00988F5A /* SALoginFormViewController.m */,
 				1CB61D1817B9F5A700EE9653 /* SASidebarViewController.h */,
 				1CB61D1917B9F5A700EE9653 /* SASidebarViewController.m */,
-				1CB61D2117BB38BF00EE9653 /* SAThreadViewController.h */,
-				1CB61D2217BB38BF00EE9653 /* SAThreadViewController.m */,
+				1CCE51F617D043F9004E9B5A /* Thread View */,
 			);
 			name = Code;
 			path = ../Code;
@@ -280,6 +293,7 @@
 				1CF4583E17CC6B66000F64B5 /* SAForum.m in Sources */,
 				1CFBD7A717B6B4A300D8CA66 /* main.m in Sources */,
 				1CFDEF0B17B6CD390076EC8D /* SAForumsClient.m in Sources */,
+				1CCE51F917D04430004E9B5A /* SAPostLayoutManager.m in Sources */,
 				1CFDEF0517B6B85F0076EC8D /* QuietAssertMacros.c in Sources */,
 				1CB61D1D17B9F7C300EE9653 /* SABasementItem.m in Sources */,
 				1CB61D1A17B9F5A700EE9653 /* SASidebarViewController.m in Sources */,
