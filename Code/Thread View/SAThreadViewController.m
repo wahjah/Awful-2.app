@@ -7,7 +7,7 @@
 
 #import "SAThreadViewController.h"
 #import "SAForumsClient.h"
-#import "SAPostLayoutManager.h"
+#import "SAPostTextView.h"
 
 @interface SAPostHeaderView : UICollectionReusableView
 
@@ -17,7 +17,7 @@
 
 @interface SAPostColletionViewCell : UICollectionViewCell
 
-@property (readonly, strong, nonatomic) UITextView *textView;
+@property (readonly, strong, nonatomic) SAPostTextView *textView;
 
 @end
 
@@ -189,17 +189,8 @@ referenceSizeForFooterInSection:(NSInteger)section
     if (self) {
         self.contentView.backgroundColor = [UIColor whiteColor];
         
-        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(0, CGFLOAT_MAX)];
-        textContainer.widthTracksTextView = YES;
-        SAPostLayoutManager *layoutManager = [SAPostLayoutManager new];
-        [layoutManager addTextContainer:textContainer];
-        _textStorage = [NSTextStorage new];
-        [_textStorage addLayoutManager:layoutManager];
-        _textView = [[UITextView alloc] initWithFrame:(CGRect){ .size = frame.size } textContainer:textContainer];
+        _textView = [[SAPostTextView alloc] initWithFrame:(CGRect){ .size = frame.size }];
         _textView.translatesAutoresizingMaskIntoConstraints = NO;
-        _textView.editable = NO;
-        _textView.scrollEnabled = NO;
-        _textView.textContainerInset = UIEdgeInsetsZero;
         [self.contentView addSubview:_textView];
         NSDictionary *views = @{ @"textView": _textView };
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textView]|"

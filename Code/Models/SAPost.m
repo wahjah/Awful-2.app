@@ -7,7 +7,7 @@
 
 #import "SAModels.h"
 #import <HTMLReader/HTMLParser.h>
-#import "SAPostLayoutManager.h"
+#import "SAPostTextView.h"
 
 @interface HTMLNode (SAPost)
 
