@@ -72,4 +72,4 @@
 
 @end
 
-NSString * const SALeftBarAttributeName = @"SALeftBarAttributeName";
+NSString * const SALeftBarAttributeName = @"SALeftBar";
