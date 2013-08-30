@@ -1,24 +1,21 @@
 PODS:
-  - AFNetworking (2.0.0-RC1):
+  - AFNetworking (2.0.0-RC2):
     - AFNetworking/Core
     - AFNetworking/UIKit+AFNetworking
-  - AFNetworking/Core (2.0.0-RC1)
-  - AFNetworking/UIKit+AFNetworking (2.0.0-RC1)
+  - AFNetworking/Core (2.0.0-RC2)
+  - AFNetworking/UIKit+AFNetworking (2.0.0-RC2)
   - HTMLReader (0.0.1-alpha.6)
 
 DEPENDENCIES:
-  - AFNetworking (from `https://github.com/AFNetworking/AFNetworking`, commit `02967ade43cc124d06c495bd2bb455b5460f6626`)
+  - AFNetworking (= 2.0.0-RC2)
   - HTMLReader (from `https://github.com/nolanw/HTMLReader`)
 
 EXTERNAL SOURCES:
-  AFNetworking:
-    :commit: 02967ade43cc124d06c495bd2bb455b5460f6626
-    :git: https://github.com/AFNetworking/AFNetworking
   HTMLReader:
     :git: https://github.com/nolanw/HTMLReader
 
 SPEC CHECKSUMS:
-  AFNetworking: 29456fb87c4a62a5ae1d27baf6771a2cf327089f
+  AFNetworking: 6b19d8a0793f342d8c879cd0af9d7488e54addcf
   HTMLReader: be8607505ee69ceccc0e3d64692db95c313f8cad
 
 COCOAPODS: 0.23.0
