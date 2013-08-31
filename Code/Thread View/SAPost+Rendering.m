@@ -96,7 +96,7 @@
             style.firstLineHeadIndent = 20;
             style.headIndent = 20;
             [string addAttributes:@{ NSParagraphStyleAttributeName: style,
-                                     SALeftBarAttributeName: @YES }
+                                     SALeftBarColorAttributeName: [UIColor blackColor] }
                             range:NSMakeRange(0, string.length)];
         }
     }

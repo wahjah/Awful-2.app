@@ -50,12 +50,12 @@
 {
     [super drawBackgroundForGlyphRange:glyphsToShow atPoint:origin];
     NSRange characterRange = [self characterRangeForGlyphRange:glyphsToShow actualGlyphRange:nil];
-    [self.textStorage enumerateAttribute:SALeftBarAttributeName
+    [self.textStorage enumerateAttribute:SALeftBarColorAttributeName
                                  inRange:characterRange
                                  options:0
-                              usingBlock:^(id value, NSRange range, BOOL *stop)
+                              usingBlock:^(UIColor *color, NSRange range, BOOL *stop)
      {
-         if (!value) {
+         if (!color) {
              return;
          }
          NSRange glyphRange = [self glyphRangeForCharacterRange:range actualCharacterRange:nil];
@@ -66,10 +66,11 @@
                                          1, CGRectGetMaxY(lastLineRect) - CGRectGetMinY(firstLineRect));
          const CGFloat leftBarPadding = 10;
          leftBarRect = CGRectOffset(leftBarRect, origin.x - leftBarPadding, origin.y);
+         [color setFill];
          [[UIBezierPath bezierPathWithRect:leftBarRect] fill];
      }];
 }
 
 @end
 
-NSString * const SALeftBarAttributeName = @"SALeftBar";
+NSString * const SALeftBarColorAttributeName = @"SALeftBarColor";
