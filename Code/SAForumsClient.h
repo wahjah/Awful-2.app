@@ -21,6 +21,11 @@
 + (instancetype)client;
 
 /**
+ * The base URL for the Forums.
+ */
+@property (readonly, strong, nonatomic) NSURL *baseURL;
+
+/**
  * The ID of the logged-in user, or nil if no user is logged in.
  */
 @property (readonly, copy, nonatomic) NSString *loggedInUserID;

@@ -31,6 +31,11 @@
     return instance;
 }
 
+- (NSURL *)baseURL
+{
+    return self.HTTPClient.baseURL;
+}
+
 - (NSString *)loggedInUserID
 {
     NSHTTPCookieStorage *storage = self.HTTPClient.session.configuration.HTTPCookieStorage;

@@ -7,6 +7,7 @@
 
 #import "SAPost+Rendering.h"
 #import <HTMLReader/HTMLParser.h>
+#import "SAForumsClient.h"
 #import "SAPostTextView.h"
 
 @interface HTMLNode (SAPostRendering)
@@ -77,8 +78,7 @@
     }
     
     if ([self.tagName isEqualToString:@"a"]) {
-        NSURL *base = [NSURL URLWithString:@"http://forums.somethingawful.com/"];
-        NSURL *url = [NSURL URLWithString:self[@"href"] relativeToURL:base];
+        NSURL *url = [NSURL URLWithString:self[@"href"] relativeToURL:[SAForumsClient client].baseURL];
         [string addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, string.length)];
     }
     else if ([self.tagName isEqualToString:@"b"]) {
